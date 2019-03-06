@@ -1,0 +1,43 @@
+var app=angular.model('myapp');
+app.directive('checkAll',function(){
+	return{
+		restrict:'A',
+		scope:{
+			onTrClick:'&'
+		},
+		link:function(scope,element,attrs){
+			element.bind('click',function(e){
+				if($(this).prop("checked")){
+					($(this).parentsUntil('table').parent().find("input[type='checkbox']").prop('checked',true));
+				}
+			});
+		},
+	};
+}).directive('checkAll',function(){
+	return{
+		restrict:'A',
+		scope:{
+			onTrClick:'&'
+		},
+		link:function(scope,element,attrs){
+			element.bind('click',function(e){
+				if($(this).prop("checked")){
+					$(this).parentsUntil('table').parent().find("input[type='checkbox']").prop('checked',true);
+				}
+			});
+		}
+	};
+})
+//data:数据键值对，可以绑定到scope变量中
+.directive("",function(){
+	return{
+		restrict:'',
+		scope:{
+			
+		},
+		link:function(){
+			
+		}
+	};
+})
+;

@@ -1,0 +1,36 @@
+加一个卡别过期
+
+
+{
+    "venueId":"t4UEvZWusTIqfiEfEvv",
+    "periodType":"1",
+    "periodTime":[
+        "2",
+        "3"
+    ],
+    "areas":[
+        {
+            "areaId":"TIbNXW0iNNezFvMokda",
+            "areaName":"liuq1号羽毛球场地",
+            "startTime":"18:00:00",
+            "endTime":"19:00:00"
+        },
+        {
+            "areaId":"TIbNXW0iNNezFvMokda",
+            "areaName":"liuq1号羽毛球场地",
+            "startTime":"19:00:00",
+            "endTime":"20:00:00"
+        },
+        {
+            "areaId":"TIbNXW0iNNezFvMokdc",
+            "areaName":"liuq3号羽毛球场地",
+            "startTime":"18:00:00",
+            "endTime":"19:00:00"
+        }
+    ],
+    "associatorId":"jGn2Uevcbq6kWP6F4ZL1",
+    "phone":"15112568831",
+    "needPassWord":"1",
+    "passWord":"",
+    "price":"200"
+}

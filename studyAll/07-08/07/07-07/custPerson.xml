@@ -1,0 +1,2974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="custPerson">
+  <typeAlias alias="custPersonBO" type="com.zte.ecc.business.custom.custperson.model.CustPersonBO" />
+  <typeAlias alias="custPersonVO" type="com.zte.ecc.access.custom.custperson.valueobject.CustPersonVO" />
+  <typeAlias alias="labelValueBeanVO111" type="com.zte.ecc.access.common.query.dao.valueobjce.LabelValueBeanVO"/>
+
+  <resultMap id="get-CustPerson-result" class="custPersonVO">
+    <result property="id" column="ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+    <result property="sex" column="SEX" jdbcType="VARCHAR" nullValue="" />
+    <result property="level" column="LEVEL_" jdbcType="VARCHAR" nullValue="" />
+    <result property="relationLevel" column="RELATION_LEVEL" jdbcType="VARCHAR" nullValue="" />
+    <result property="birthday" column="BIRTHDAY" jdbcType="DATE" nullValue="" />
+    <result property="title" column="TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="nativePlace" column="NATIVE_PLACE" jdbcType="VARCHAR" nullValue="" />
+    <result property="marriAge" column="MARRIAGE" jdbcType="VARCHAR" nullValue="" />
+    <result property="folk" column="FOLK" jdbcType="VARCHAR" nullValue="" />
+    <result property="party" column="PARTY" jdbcType="VARCHAR" nullValue="" />
+    <result property="foreignLanguageLevel" column="FOREIGN_LANGUAGE_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="highEducationalLevel" column="HIGH_EDUCATIONAL_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR" nullValue="" />
+    <result property="homePhone" column="HOME_PHONE" jdbcType="VARCHAR" nullValue="" />
+    <result property="address" column="ADDRESS" jdbcType="VARCHAR" nullValue="" />
+    <result property="communicationAddress" column="COMMUNICATION_ADDRESS" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="email" column="EMAIL" jdbcType="VARCHAR" nullValue="" />
+    <result property="mobilePhone" column="MOBILE_PHONE" jdbcType="VARCHAR" nullValue="" />
+    <result property="careEducationalLevel" column="CARE_EDUCATIONAL_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="familyImportance" column="FAMILY_IMPORTANCE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="mainInfluenceFamily" column="MAIN_INFLUENCE_FAMILY" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="enterCompanyTime" column="ENTER_COMPANY_TIME" jdbcType="DATE"
+      nullValue="" />
+    <result property="prevTitle" column="PREV_TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="prevTitleTime" column="PREV_TITLE_TIME" jdbcType="DATE" nullValue="" />
+    <result property="carest" column="CAREST" jdbcType="VARCHAR" nullValue="" />
+    <result property="especiallyInterest" column="ESPECIALLY_INTEREST" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="customerId" column="CUSTOMER_ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="customerDeptId" column="CUSTOMER_DEPT_ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="deptId" column="DEPT_ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="postCode" column="POST_CODE" jdbcType="VARCHAR" nullValue="" />
+    <result property="memo" column="MEMO" jdbcType="VARCHAR" nullValue="" />
+    <result property="createdBy" column="CREATED_BY" jdbcType="NUMERIC" nullValue="0" />
+    <result property="creationDate" column="CREATION_TIME" jdbcType="DATE" nullValue="" />
+    <result property="lastUpdatedBy" column="LAST_UPDATED_BY" jdbcType="NUMERIC" nullValue="0" />
+    <result property="lastUpdateDate" column="LAST_UPDATE_TIME" jdbcType="DATE" nullValue="" />
+    <result property="enabledFlag" column="ENABLE_FLAG" jdbcType="VARCHAR" nullValue="" />
+    <result property="faith" column="FAITH" jdbcType="VARCHAR" nullValue="" />
+    <result property="fax" column="FAX" jdbcType="VARCHAR" nullValue="" />
+    <result property="language" column="LANGUAGE" jdbcType="VARCHAR" nullValue="" />
+    <result property="dsLevel" column="DS_LEVEL" jdbcType="NUMERIC" nullValue="0" />
+    <result property="nationality" column="NATIONALITY" jdbcType="VARCHAR" nullValue="" />
+    <result property="linkManType" column="LINKMAN_TYPE" jdbcType="VARCHAR" nullValue="" />
+    <result property="personType" column="PERSON_TYPE" jdbcType="NUMERIC" nullValue="0" />
+    <result property="linkmanBackGround" column="LINKMAN_BACKGROUND" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="areaId" column="AREA_ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="coreDs" column="CORE_DS" jdbcType="VARCHAR" nullValue="" />
+    <result property="homePostCode" column="HOME_POST_CODE" jdbcType="VARCHAR" nullValue="" />
+    <result property="ourVisitDutyEmp" column="OUR_VISIT_DUTY_EMP" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="titleLevel" column="TITLE_LEVEL" jdbcType="VARCHAR" nullValue="" />
+    <result property="newstyleFlag" column="NEWSTYLE_FLAG" jdbcType="VARCHAR" nullValue="" />
+    <result property="verifyFlag" column="VERIFY_FLAG" jdbcType="VARCHAR" nullValue="" />
+    <result property="languageType" column="languageType" jdbcType="VARCHAR" nullValue="" />
+    <result property="contactFlag" column="CONTACT_FLAG" jdbcType="VARCHAR" nullValue="" />
+    <result property="otherTypeFlag" column="OTHER_TYPE_FLAG" jdbcType="VARCHAR" nullValue="" />
+  </resultMap>
+
+
+  <resultMap id="get-CustPersonList-result" class="custPersonBO">
+    <result property="custPersonVO.id" column="id" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.linkManType" column="LINKMAN_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="companyName" column="companyName" jdbcType="VARCHAR" nullValue="" />
+    <result property="deptName" column="deptName" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.title" column="TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.titleLevel" column="TITLE_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.level" column="LEVEL_" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.dsLevel" column="DS_LEVEL" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.relationLevel" column="RELATION_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.mobilePhone" column="MOBILE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.email" column="EMAIL" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.verifyFlag" column="VERIFY_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="lastUpdateDate" column="LASTUPDATEDATE" jdbcType="VARCHAR" nullValue="" />
+    <result property="ourVisitDutyEmpName" column="userFullName" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="primaryProduct" column="PRIMARY_PRODUCT_NAME" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.personType" column="PERSON_TYPE" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.language" column="LANGUAGE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.sex" column="sex" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.languageType" column="languagetype" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.duty" column="duty" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.currentCounty" column="currnet_country" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="pageControlData.resultCount" column="resultCount" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.communicationAddress" column="COMMUNICATION_ADDRESS"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.birthday" column="BIRTHDAY" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.postCode" column="POST_CODE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.contactFlag" column="CONTACT_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.otherTypeFlag" column="OTHER_TYPE_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.opeartorType" column="OPERATOR_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.ztePersonA" column="zte_person_a" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.isEncrypt" column="is_encrypt" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.createBy" column="created_by" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.authData" column="authData" jdbcType="VARCHAR"
+      nullValue="" />
+  </resultMap>
+  
+  
+  <resultMap id="get-CustPersonList-result1" class="custPersonBO">
+    <result property="custPersonVO.id" column="id" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.linkManType" column="LINKMAN_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="companyName" column="companyName" jdbcType="VARCHAR" nullValue="" />
+    <result property="deptName" column="deptName" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.title" column="TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.titleLevel" column="TITLE_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.level" column="LEVEL_" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.dsLevel" column="DS_LEVEL" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.relationLevel" column="RELATION_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.mobilePhone" column="MOBILE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.email" column="EMAIL" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.verifyFlag" column="VERIFY_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="lastUpdateDate" column="LASTUPDATEDATE" jdbcType="VARCHAR" nullValue="" />
+    <result property="ourVisitDutyEmpName" column="userFullName" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="primaryProduct" column="PRIMARY_PRODUCT_NAME" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.personType" column="PERSON_TYPE" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.language" column="LANGUAGE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.sex" column="sex" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.languageType" column="languagetype" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.duty" column="duty" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.currentCounty" column="currnet_country" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="pageControlData.resultCount" column="resultCount" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.communicationAddress" column="COMMUNICATION_ADDRESS"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.birthday" column="BIRTHDAY" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.postCode" column="POST_CODE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.contactFlag" column="CONTACT_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.otherTypeFlag" column="OTHER_TYPE_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.opeartorType" column="OPERATOR_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.ztePersonA" column="zte_person_a" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.isEncrypt" column="is_encrypt" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.createBy" column="created_by" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.authData" column="authData" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.operatorLevel" column="OPERATOR_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+  </resultMap>
+
+  <resultMap id="get-CustPersonDraftList-result" class="custPersonBO">
+    <result property="custPersonVO.id" column="id" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.linkManType" column="LINKMAN_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="companyName" column="companyName" jdbcType="VARCHAR" nullValue="" />
+    <result property="deptName" column="deptName" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.title" column="TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.level" column="LEVEL_" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.dsLevel" column="DS_LEVEL" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.relationLevel" column="RELATION_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.mobilePhone" column="MOBILE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.email" column="EMAIL" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.verifyFlag" column="VERIFY_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+
+    <result property="lastUpdateDate" column="LASTUPDATEDATE" jdbcType="VARCHAR" nullValue="" />
+
+
+    <result property="masterDeptName" column="masterDeptName" jdbcType="VARCHAR" nullValue="" />
+    <result property="customerAddress" column="address" jdbcType="VARCHAR" nullValue="" />
+
+    <result property="pageControlData.resultCount" column="resultCount" jdbcType="NUMERIC"
+      nullValue="0" />
+  </resultMap>
+
+  <resultMap id="get-CustPersonByID-result" class="custPersonBO">
+    <result property="custPersonVO.id" column="ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+
+    <result property="companyName" column="companyName" jdbcType="VARCHAR" nullValue="" />
+    <result property="deptName" column="deptName" jdbcType="VARCHAR" nullValue="" />
+    <result property="custDeptInfoVO.category" column="deptNO" jdbcType="NUMERIC" nullValue="0" />
+
+    <result property="custPersonVO.sex" column="SEX" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.level" column="LEVEL_" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.relationLevel" column="RELATION_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.birthday" column="birth" jdbcType="DATE" nullValue="" />
+    <result property="custPersonVO.title" column="TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.nativePlace" column="NATIVE_PLACE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.marriAge" column="MARRIAGE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.folk" column="FOLK" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.party" column="PARTY" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.foreignLanguageLevel" column="FOREIGN_LANGUAGE_LEVEL"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.highEducationalLevel" column="HIGH_EDUCATIONAL_LEVEL"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.homePhone" column="HOME_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.address" column="ADDRESS" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.communicationAddress" column="COMMUNICATION_ADDRESS"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.email" column="EMAIL" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.mobilePhone" column="MOBILE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.careEducationalLevel" column="CARE_EDUCATIONAL_LEVEL"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.familyImportance" column="FAMILY_IMPORTANCE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.mainInfluenceFamily" column="MAIN_INFLUENCE_FAMILY"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.enterCompanyTime" column="enterTime" jdbcType="DATE"
+      nullValue="" />
+    <result property="custPersonVO.prevTitle" column="PREV_TITLE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.prevTitleTime" column="prevTime" jdbcType="DATE"
+      nullValue="" />
+    <result property="custPersonVO.carest" column="CAREST" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.especiallyInterest" column="ESPECIALLY_INTEREST" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.customerId" column="CUSTOMER_ID" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.customerDeptId" column="CUSTOMER_DEPT_ID" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.deptId" column="DEPT_ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.postCode" column="POST_CODE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.memo" column="MEMO" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.createdBy" column="CREATED_BY" jdbcType="NUMERIC"
+      nullValue="0" />
+
+    <result property="custPersonVO.creationDate" column="createTime" jdbcType="DATE"
+      nullValue="" />
+    <result property="custPersonVO.lastUpdatedBy" column="LAST_UPDATED_BY" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.lastUpdateDate" column="lastUpdateTime" jdbcType="DATE"
+      nullValue="" />
+    <result property="custPersonVO.enabledFlag" column="ENABLE_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+
+    <result property="custPersonVO.faith" column="FAITH" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.fax" column="FAX" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.language" column="LANGUAGE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.dsLevel" column="DS_LEVEL" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.nationality" column="NATIONALITY" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.linkManType" column="LINKMAN_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.personType" column="PERSON_TYPE" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.linkmanBackGround" column="LINKMAN_BACKGROUND" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.areaId" column="AREA_ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.coreDs" column="CORE_DS" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.homePostCode" column="HOME_POST_CODE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.ourVisitDutyEmp" column="OUR_VISIT_DUTY_EMP" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.titleLevel" column="TITLE_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.newstyleFlag" column="NEWSTYLE_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.verifyFlag" column="VERIFY_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.duty" column="duty" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.passport" column="passport" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.idcode" column="idcode" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.languageType" column="languageType" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.currentCounty" column="currnet_country" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.contactFlag" column="CONTACT_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.otherTypeFlag" column="OTHER_TYPE_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.productCategory" column="PRODUCT_CATEGORY" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.nowAddr" column="nowAddr" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.otherPhone" column="otherPhone" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="ourVisitDutyEmpName" column="our_visit_duty_emp_name" jdbcType="VARCHAR"
+      nullValue="" />
+  </resultMap>
+
+  <resultMap id="get-CustPersonListId-result" class="custPersonBO">
+    <result property="custPersonVO.id" column="id" jdbcType="NUMERIC" nullValue="0" />
+    <result property="pageControlData.resultCount" column="resultCount" jdbcType="NUMERIC"
+      nullValue="0" />
+  </resultMap>
+
+  <resultMap id="get-CustPersonListContent-result" class="custPersonBO">
+    <result property="custPersonVO.id" column="id" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.linkManType" column="LINKMAN_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="companyName" column="companyName" jdbcType="VARCHAR" nullValue="" />
+    <result property="deptName" column="deptName" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.title" column="TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.level" column="LEVEL_" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.dsLevel" column="DS_LEVEL" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.relationLevel" column="RELATION_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.mobilePhone" column="MOBILE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.email" column="EMAIL" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.verifyFlag" column="VERIFY_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.otherTypeFlag" column="OTHER_TYPE_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="ourVisitDutyEmpName" column="our_visit_duty_emp_name" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="lastUpdatedByName" column="last_updated_by_name" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="lastUpdateDate" column="last_update_time" jdbcType="VARCHAR"
+      nullValue="" />
+
+
+    <result property="pageControlData.resultCount" column="resultCount" jdbcType="NUMERIC"
+      nullValue="0" />
+  </resultMap>
+
+  <resultMap id="get-CustPersonListContent-result2" class="custPersonBO">
+    <result property="custPersonVO.id" column="id" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.linkManType" column="LINKMAN_TYPE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="companyName" column="companyName" jdbcType="VARCHAR" nullValue="" />
+    <result property="deptName" column="deptName" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.title" column="TITLE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.titleLevel" column="TITLE_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.level" column="LEVEL_" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.dsLevel" column="DS_LEVEL" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.relationLevel" column="RELATION_LEVEL" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.mobilePhone" column="MOBILE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.postCode" column="POST_CODE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.email" column="EMAIL" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.verifyFlag" column="VERIFY_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.lastUpdateDate" column="LAST_UPDATE_TIME" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="customerType" column="customer_type" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.birthday" column="BIRTHDAY" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.contactFlag" column="CONTACT_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.especiallyInterest" column="ESPECIALLY_INTEREST" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.personType" column="PERSON_TYPE" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="masterDeptId" column="MASTER_DEPT_ID" jdbcType="NUMERIC" nullValue="0" />
+    <result property="custPersonVO.ourVisitDutyEmp" column="OUR_VISIT_DUTY_EMP" jdbcType="NUMERIC"
+      nullValue="0" />
+    <result property="custPersonVO.address" column="ADDRESS" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.communicationAddress" column="COMMUNICATION_ADDRESS"
+      jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.homePostCode" column="HOME_POST_CODE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.homePhone" column="HOME_PHONE" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.language" column="LANGUAGE" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.sex" column="SEX" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.languageType" column="languageType" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.duty" column="duty" jdbcType="VARCHAR" nullValue="" />
+    <result property="custPersonVO.currentCounty" column="currnet_country" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.otherTypeFlag" column="OTHER_TYPE_FLAG" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="custPersonVO.productCategory" column="PRODUCT_CATEGORY" jdbcType="VARCHAR"
+      nullValue="" />
+    <result property="masterDeptName" column="master_dept_name" jdbcType="VARCHAR" nullValue="" />
+    <result property="pageControlData.resultCount" column="resultCount" jdbcType="NUMERIC"
+      nullValue="0" />
+
+  </resultMap>
+
+  <resultMap id="get-CustPersonLinkman-result" class="custPersonVO">
+    <result property="name" column="NAME" jdbcType="VARCHAR" nullValue="" />
+  </resultMap>
+  
+  <resultMap id="get-jobLevel-result" class="labelValueBeanVO111">
+    <result property="label" column="name_cn" jdbcType="VARCHAR" nullValue="" />
+    <result property="value" column="levels" jdbcType="VARCHAR" nullValue="" />
+  </resultMap>
+
+  <select id="loadPersonInfoById" parameterClass="java.lang.Integer" resultMap="get-CustPersonByID-result">
+ <![CDATA[
+ SELECT info.id
+ ,(SELECT cust.name FROM ECC_CUST.ECC_CUST_CUSTOMER cust WHERE cust.id = info.customer_id ) companyName
+ ,(SELECT dept.name FROM ECC_CUST.ECC_CUST_CUSTOMER_DEPT dept WHERE info.customer_dept_id = dept.id ) deptName
+ ,info.name
+ ,(SELECT dept.category FROM ECC_CUST.ECC_CUST_CUSTOMER_DEPT dept WHERE info.customer_dept_id = dept.id ) deptNO
+ ,info.sex
+ ,info.level_
+ ,info.relation_level
+ ,to_char(info.birthday,'YYYY-MM-DD') birth
+ ,info.title
+ ,info.native_place
+ ,info.marriage 
+ ,info.folk 
+ ,info.party
+ ,info.foreign_language_level
+ ,info.high_educational_level
+ ,info.office_phone 
+ ,info.home_phone 
+ ,info.address 
+ ,info.communication_address
+ ,info.email 
+ ,info.mobile_phone 
+ ,info.care_educational_level 
+ ,info.family_importance
+ ,info.main_influence_family
+ ,to_char(info.enter_company_time,'YYYY-MM-DD') enterTime 
+ ,info.prev_title 
+ ,to_char(info.prev_title_time,'YYYY-MM-DD') prevTime
+ ,info.carest 
+ ,info.especially_interest 
+ ,info.customer_id 
+ ,info.customer_dept_id 
+ ,info.dept_id 
+ ,info.post_code 
+ ,info.memo 
+ ,info.created_by
+ ,to_char(info.creation_time,'YYYY-MM-DD') createTime
+ ,info.last_updated_by
+ ,to_char(info.last_update_time,'YYYY-MM-DD') lastUpdateTime
+ ,info.enable_flag
+ ,info.faith 
+ ,info.fax 
+ ,info.language 
+ ,info.ds_level
+ ,info.nationality 
+ ,info.linkman_type 
+ ,info.person_type 
+ ,info.linkman_background 
+ ,info.area_id 
+ ,info.core_ds
+ ,info.home_post_code 
+ ,info.our_visit_duty_emp
+ ,info.title_level
+ ,info.newstyle_flag
+ ,info.verify_flag
+ ,info.duty
+ ,info.idcode
+ ,info.passport
+ ,info.languageType
+ ,info.currnet_country
+ ,info.OTHER_TYPE_FLAG
+ ,info.CONTACT_FLAG
+ ,info.PRODUCT_CATEGORY
+ ,info.nowAddr
+ ,info.otherPhone
+ ,Em.Employee_Name our_visit_duty_emp_name
+ FROM 
+ ECC_CUST.ECC_CUST_PERSON_INFO info left join ECC_FND.ECC_FND_EMPLYEES em 
+ On info.OUR_VISIT_DUTY_EMP = em.EMPLYEE_ID
+ WHERE info.id = #id# 
+ ]]>
+  </select>
+<!-- 0219001587 add OPERATOR_TYPE 
+	在原有的查询集合中union授权联系人集合resultTable1
+WITH resultTable AS (
+ SELECT A.id, 
+ B.NAME companyName,
+ B.LAST_UPDATE_TIME
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ECC_CUST.ECC_CUST_CUSTOMER B
+ WHERE a.enable_flag = 'T'
+ and b.enable_flag = 'T'
+ and a.customer_id = b.id
+ and b.id in (SELECT CUSTOMER_ID
+ FROM ECC_CUST.ECC_CUST_CUSTOMER_POWER
+ WHERE EMPLOYEEID = $authorityVO.userId$
+ )
+ AND B.id = $custPersonVO.customerId$
+ union
+ SELECT A.id,
+ B.NAME companyName, 
+ B.LAST_UPDATE_TIME
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ECC_CUST.ECC_CUST_CUSTOMER B
+ WHERE a.enable_flag = 'T'
+ AND b.enable_flag = 'T'
+ AND a.customer_id = b.id
+ and b.master_dept_id in
+ (SELECT column_value
+ FROM table(ecc_fnd.get_authority_dept_id($authorityVO.userId$, '40140')))
+ and INSTR('BQ003,BQ004', A.LEVEL_) > 0
+ AND B.id = $custPersonVO.customerId$
+ union
+ SELECT A.id,
+ B.NAME companyName,
+ B.LAST_UPDATE_TIME
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ECC_CUST.ECC_CUST_CUSTOMER B
+ WHERE a.enable_flag = 'T'
+ AND b.enable_flag = 'T'
+ AND a.customer_id = b.id
+ AND b.master_dept_id in
+ (SELECT column_value
+ FROM table(ecc_fnd.get_authority_dept_id($authorityVO.userId$,
+ '5001,40000,8200,40130,8100')))
+ AND B.id = $custPersonVO.customerId$
+ )
+SELECT * FROM (
+ SELECT a.NAME,
+ resultTable.id,
+ a.LINKMAN_TYPE,
+ resultTable.companyName,
+ cdept.name deptName,
+ a.TITLE,
+ a.TITLE_LEVEL,
+ a.LEVEL_,
+ a.Ds_Level,
+ a.RELATION_LEVEL,
+ a.MOBILE_PHONE,
+ a.OFFICE_PHONE,
+ a.POST_CODE,
+ a.EMAIL,
+ a.VERIFY_FLAG,
+ a.OTHER_TYPE_FLAG,
+ a.address,
+ a.communication_address,
+ a.HOME_POST_CODE,
+ a.HOME_PHONE,
+ a.BIRTHDAY,
+ a.CONTACT_FLAG,
+ to_char(resultTable.LAST_UPDATE_TIME, 'YYYY-MM-DD') LASTUPDATEDATE,
+ A.OUR_VISIT_DUTY_EMP userFullName,
+ ecc_cust.ecc_cust_pkg.get_custperson_product_info(resultTable.ID) AS PRIMARY_PRODUCT_NAME,
+ a.person_type,
+ a.language,
+ a.Sex,
+ a.Languagetype,
+ a.Duty,
+ a.Currnet_Country,
+ viewTable.resultCount,
+ ROWNUM AS resultNums,
+ a.OPERATOR_TYPE,
+ a.zte_person_a
+ FROM resultTable , (SELECT Count(1) AS resultCount FROM resultTable) viewTable ,
+ ecc_cust.ecc_cust_customer_dept cdept, ECC_CUST.ECC_CUST_PERSON_INFO A
+ WHERE ROWNUM <= #pageControlData.endRowNum# 
+ and resultTable.id = a.id and cdept.id(+) = A.Customer_Dept_Id
+ and a.id in (
+	 select temp.id from (select distinct t.id,cust.id as custId
+	  from ECC_CUST.ECC_CUST_PERSON_INFO t,
+	       ECC_CUST.ECC_CUST_CUSTOMER    cust
+	 where t.enable_flag = 'T'
+	   and cust.enable_flag = 'T'
+	   and cust.id = t.customer_id
+	   and cust.id in (SELECT distinct CUSTOMER_ID
+	                     FROM ECC_CUST.ECC_CUST_CUSTOMER_POWER eccp
+	                    WHERE eccp.employeeid = $authorityVO.userId$)
+	union 
+	select distinct t.id,cust.id as custId
+	  from ECC_CUST.ECC_CUST_PERSON_INFO t,
+	       ECC_CUST.ECC_CUST_CUSTOMER    cust
+	 where t.enable_flag = 'T'
+	   and cust.enable_flag = 'T'
+	   and cust.id = t.customer_id
+	   and cust.MASTER_DEPT_ID in
+	       (SELECT distinct ucoa.CUST_ORG_ID
+	          FROM ECC_FND.ECC_FND_USERORG_CUST_ORG_AUTH ucoa,
+	               ECC_FND.ECC_FND_EMPLYEES              eep
+	         WHERE ucoa.id = eep.dept_id
+	           and eep.emplyee_id = $authorityVO.userId$)
+	union 
+	select distinct t.id,cust.id as custId
+	  from ECC_CUST.ECC_CUST_PERSON_INFO t,
+	       ECC_CUST.ECC_CUST_CUSTOMER    cust
+	 where t.enable_flag = 'T'
+	   and cust.enable_flag = 'T'
+	   and cust.id = t.customer_id
+	   and t.id in (SELECT distinct euca.cust_person_id
+	                  from ECC_FND.ECC_FND_USER_CONTACT_AUTH euca
+	                 WHERE euca.user_id = $authorityVO.userId$)
+	union 
+	select distinct t.id,cust.id as custId
+	  from ECC_CUST.ECC_CUST_PERSON_INFO t,
+	  ECC_CUST.ECC_CUST_CUSTOMER    cust
+	 where t.enable_flag = 'T'
+	  and cust.enable_flag = 'T'
+	  and cust.id = t.customer_id
+	  and t.created_by = $authorityVO.userId$) temp
+ )
+ )
+ WHERE resultNums > #pageControlData.startRowNum#-->
+  <select id="queryPersonInfoList" parameterClass="custPersonBO" resultMap="get-CustPersonList-result1">
+ <![CDATA[
+		 WITH
+		    resultTable AS
+		    (
+		        SELECT
+		            A.id,
+		            B.NAME companyName,
+		            B.LAST_UPDATE_TIME
+		        FROM
+		            ECC_CUST.ECC_CUST_PERSON_INFO A,
+		            ECC_CUST.ECC_CUST_CUSTOMER B
+		        WHERE
+		            a.enable_flag = 'T'
+		        AND b.enable_flag = 'T'
+		        AND a.customer_id = b.id
+		        AND b.id IN
+		            (
+		                SELECT
+		                    CUSTOMER_ID
+		                FROM
+		                    ECC_CUST.ECC_CUST_CUSTOMER_POWER
+		                WHERE
+		                    EMPLOYEEID = $authorityVO.userId$ and enable_flag='M' )
+		        AND B.id = $custPersonVO.customerId$
+		        and (A.IS_TEMP='0' or A.IS_TEMP is null)
+		        AND B.master_dept_id IN
+            (
+                SELECT
+                    dept.DEPT_ID
+                FROM
+                    ECC_FND.ECC_FND_DEPT dept
+                WHERE
+                    ENABLE_FLAG = 'T' START
+                WITH
+                    dept.DEPT_ID IN
+                    (
+                        SELECT
+                            AUTH_DEPT_ID
+                        FROM
+                            ECC_FND.ECC_FND_AUTHORITY
+                        WHERE
+                            ENABLE_FLAG = 'T'
+                        AND AUTH_TYPE = 'ORG_TYPE'
+                        AND AUTH_TITLE_ID IN (5001,
+                                              40000,
+                                              8200,
+                                              40130,
+                                              4800)
+                        AND EMPLOYEE_ID = $authorityVO.userId$
+                    )
+                    CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID)
+		        UNION
+		        SELECT
+		            A.id,
+		            B.NAME companyName,
+		            B.LAST_UPDATE_TIME
+		        FROM
+		            ECC_CUST.ECC_CUST_PERSON_INFO A,
+		            ECC_CUST.ECC_CUST_CUSTOMER B
+		        WHERE
+		            a.enable_flag = 'T'
+		        AND b.enable_flag = 'T'
+		        AND a.customer_id = b.id
+		        AND b.master_dept_id IN
+		            (
+		                SELECT
+		                    column_value
+		                FROM
+		                    TABLE(ecc_fnd.get_authority_dept_id($authorityVO.userId$, '40140')))
+		        AND INSTR('BQ003,BQ004', A.LEVEL_) > 0
+		        AND B.id = $custPersonVO.customerId$
+		        and (A.IS_TEMP='0' or A.IS_TEMP is null)
+		        UNION
+		        SELECT
+		            A.id,
+		            B.NAME companyName,
+		            B.LAST_UPDATE_TIME
+		        FROM
+		            ECC_CUST.ECC_CUST_PERSON_INFO A,
+		            ECC_CUST.ECC_CUST_CUSTOMER B
+		        WHERE
+		            a.enable_flag = 'T'
+		        AND b.enable_flag = 'T'
+		        AND a.customer_id = b.id
+		        and person_type='20'
+		        ]]>
+		        <dynamic prepend="">
+				  <isEqual prepend="" property="isCrm" compareValue="true">
+				  	<isEqual prepend="" property="linkManType" compareValue="S001">
+						 <isNotEmpty prepend="and" property="deptList">
+								b.master_dept_id in
+						 		<iterate open="(" close=")" conjunction="," property="deptList">
+								 	#deptList[]#
+								 </iterate>
+						</isNotEmpty>
+					</isEqual>
+					<isEqual prepend="" property="linkManType" compareValue="S003">
+						 <isNotEmpty prepend="and" property="deptList">
+								b.master_dept_id in
+						 		<iterate open="(" close=")" conjunction="," property="deptList">
+								 	#deptList[]#
+								 </iterate>
+						</isNotEmpty>
+					</isEqual>
+					<isEqual prepend="" property="linkManType" compareValue="S002">
+						and A.id in (
+								select ID from ecc.ecc_cust_person_info where CREATED_BY in (
+									select EMPLYEE_ID from ecc_fnd.ecc_fnd_emplyees where EMPLYEE_ID in (
+									select EMPLOYEE_ID from ECC_FND.ECC_FND_AUTH_LINKMANTYPE where LINKMANTYPE='S002'
+									)  
+									<isNotEmpty prepend="and" property="deptList">
+										 DEPT_ID in
+								 		<iterate open="(" close=")" conjunction="," property="deptList">
+										 	#deptList[]#
+										 </iterate>
+									</isNotEmpty>
+								)
+								or (ZTE_PERSON_A in (
+								
+									select EMPLYEE_ID from ecc_fnd.ecc_fnd_emplyees where EMPLYEE_ID in (
+										select EMPLOYEE_ID from ECC_FND.ECC_FND_AUTH_LINKMANTYPE where LINKMANTYPE='S002'
+										)  
+										<isNotEmpty prepend="and" property="deptList">
+											 DEPT_ID in
+									 		<iterate open="(" close=")" conjunction="," property="deptList">
+											 	#deptList[]#
+											 </iterate>
+										</isNotEmpty>
+								
+								) )
+								)
+					</isEqual>
+				  </isEqual>
+				  <isNotEqual prepend="and" property="isCrm" compareValue="true">
+				  	(
+				  	A.created_by=$authorityVO.userId$
+				  	or 
+				  	(A.ZTE_PERSON_A=$authorityVO.userId$ and A.person_type='20')
+				  	)
+				  </isNotEqual>
+				</dynamic> 
+ 			<![CDATA[
+		        AND B.id = $custPersonVO.customerId$
+		        and (A.IS_TEMP='0' or A.IS_TEMP is null)
+		    ),
+		     resultTable1 AS
+		    (
+		    ]]>
+		    <dynamic> 
+	    		<isEqual prepend="" property="managerAFlag" compareValue="1">
+	    			SELECT DISTINCT
+			            t.NAME,
+			            t.id,
+			            t.LINKMAN_TYPE,
+			            cust.name companyName,
+			            (SELECT cdept.name FROM
+			             ecc_cust.ecc_cust_customer_dept cdept
+			             WHERE cdept.id=t.Customer_Dept_Id) deptName,
+			            t.TITLE,
+			            t.TITLE_LEVEL,
+			            t.LEVEL_,
+			            t.Ds_Level,
+			            t.RELATION_LEVEL,
+			            t.MOBILE_PHONE,
+			            t.OFFICE_PHONE,
+			            t.POST_CODE,
+			            t.EMAIL,
+			            t.VERIFY_FLAG,
+			            t.OTHER_TYPE_FLAG,
+			            t.address,
+			            t.communication_address,
+			            t.HOME_POST_CODE,
+			            t.HOME_PHONE,
+			            t.BIRTHDAY,
+			            t.CONTACT_FLAG,
+			            TO_CHAR(cust.LAST_UPDATE_TIME, 'YYYY-MM-DD')               LASTUPDATEDATE,
+			            t.OUR_VISIT_DUTY_EMP                                       userFullName,
+			            ecc_cust.ecc_cust_pkg.get_custperson_product_info(t.id) AS PRIMARY_PRODUCT_NAME,
+			            t.person_type,
+			            t.language,
+			            t.Sex,
+			            t.Languagetype,
+			            t.Duty,
+			            t.Currnet_Country,
+			            t.zte_person_a,
+			            t.is_encrypt,
+			            t.created_by ,
+			            (case when  t.ZTE_PERSON_A=$authorityVO.userId$ then 'false' 
+			                  when  t.ZTE_PERSON_B=$authorityVO.userId$  then 'false' 
+			                  else 'true' end) authData,
+			            t.OPERATOR_TYPE,
+            			t.OPERATOR_LEVEL
+			        FROM
+			            ECC_CUST.ECC_CUST_PERSON_INFO t,
+			            ECC_CUST.ECC_CUST_CUSTOMER cust
+			        WHERE
+			            t.enable_flag = 'T'
+			        AND cust.enable_flag = 'T'
+			        AND cust.id = t.customer_id
+			        AND cust.id = $custPersonVO.customerId$
+			        AND (t.IS_TEMP='0' OR  t.IS_TEMP IS NULL)
+			        and t.person_type='10'
+			        and t.ZTE_PERSON_A=$authorityVO.userId$
+			        union
+    			</isEqual>
+	    		<isEqual prepend="" property="managerBFlag" compareValue="1">
+	    		    SELECT DISTINCT
+			            t.NAME,
+			            t.id,
+			            t.LINKMAN_TYPE,
+			            cust.name companyName,
+			            (
+			                SELECT
+			                    cdept.name
+			                FROM
+			                    ecc_cust.ecc_cust_customer_dept cdept
+			                WHERE
+			                    cdept.id=t.Customer_Dept_Id) deptName,
+			            t.TITLE,
+			            t.TITLE_LEVEL,
+			            t.LEVEL_,
+			            t.Ds_Level,
+			            t.RELATION_LEVEL,
+			            t.MOBILE_PHONE,
+			            t.OFFICE_PHONE,
+			            t.POST_CODE,
+			            t.EMAIL,
+			            t.VERIFY_FLAG,
+			            t.OTHER_TYPE_FLAG,
+			            t.address,
+			            t.communication_address,
+			            t.HOME_POST_CODE,
+			            t.HOME_PHONE,
+			            t.BIRTHDAY,
+			            t.CONTACT_FLAG,
+			            TO_CHAR(cust.LAST_UPDATE_TIME, 'YYYY-MM-DD')               LASTUPDATEDATE,
+			            t.OUR_VISIT_DUTY_EMP                                       userFullName,
+			            ecc_cust.ecc_cust_pkg.get_custperson_product_info(t.id) AS PRIMARY_PRODUCT_NAME,
+			            t.person_type,
+			            t.language,
+			            t.Sex,
+			            t.Languagetype,
+			            t.Duty,
+			            t.Currnet_Country,
+			            t.zte_person_a,
+			            t.is_encrypt,
+			            t.created_by ,
+			            (case when  t.ZTE_PERSON_A=$authorityVO.userId$ then 'false' 
+			                  when  t.ZTE_PERSON_B=$authorityVO.userId$  then 'false' 
+			                  else 'true' end) authData,
+			            t.OPERATOR_TYPE,
+            			t.OPERATOR_LEVEL
+			        FROM
+			            ECC_CUST.ECC_CUST_PERSON_INFO t,
+			            ECC_CUST.ECC_CUST_CUSTOMER cust
+			        WHERE
+			            t.enable_flag = 'T'
+			        AND cust.enable_flag = 'T'
+			        AND cust.id = t.customer_id
+			        AND cust.id = $custPersonVO.customerId$
+			        AND (t.IS_TEMP='0' OR  t.IS_TEMP IS NULL)
+			        and t.person_type='10'
+			        and t.ZTE_PERSON_B=$authorityVO.userId$
+			        union
+    			</isEqual>
+		    </dynamic> 
+		    
+		    <![CDATA[
+			     SELECT DISTINCT
+	            t.NAME,
+	            t.id,
+	            t.LINKMAN_TYPE,
+	            cust.name companyName,
+	            (
+	                SELECT
+	                    cdept.name
+	                FROM
+	                    ecc_cust.ecc_cust_customer_dept cdept
+	                WHERE
+	                    cdept.id=t.Customer_Dept_Id) deptName,
+	            t.TITLE,
+	            t.TITLE_LEVEL,
+	            t.LEVEL_,
+	            t.Ds_Level,
+	            t.RELATION_LEVEL,
+	            t.MOBILE_PHONE,
+	            t.OFFICE_PHONE,
+	            t.POST_CODE,
+	            t.EMAIL,
+	            t.VERIFY_FLAG,
+	            t.OTHER_TYPE_FLAG,
+	            t.address,
+	            t.communication_address,
+	            t.HOME_POST_CODE,
+	            t.HOME_PHONE,
+	            t.BIRTHDAY,
+	            t.CONTACT_FLAG,
+	            TO_CHAR(cust.LAST_UPDATE_TIME, 'YYYY-MM-DD')               LASTUPDATEDATE,
+	            t.OUR_VISIT_DUTY_EMP                                       userFullName,
+	            ecc_cust.ecc_cust_pkg.get_custperson_product_info(t.id) AS PRIMARY_PRODUCT_NAME,
+	            t.person_type,
+	            t.language,
+	            t.Sex,
+	            t.Languagetype,
+	            t.Duty,
+	            t.Currnet_Country,
+	            t.zte_person_a,
+	            t.is_encrypt,
+	            t.created_by ,
+	            'true' authData,
+	            t.OPERATOR_TYPE,
+	            t.OPERATOR_LEVEL
+	        FROM
+	            ECC_CUST.ECC_CUST_PERSON_INFO t,
+	            ECC_CUST.ECC_CUST_CUSTOMER cust
+	        WHERE
+	            t.enable_flag = 'T'
+	        AND cust.enable_flag = 'T'
+	        AND cust.id = t.customer_id
+	        AND cust.id = $custPersonVO.customerId$
+	        AND (t.IS_TEMP='0' OR  t.IS_TEMP IS NULL)
+	        AND t.person_type='10'
+	        AND t.CREATED_BY=$authorityVO.userId$
+	        AND t.ZTE_PERSON_B!=$authorityVO.userId$
+	        AND t.ZTE_PERSON_A!=$authorityVO.userId$
+	        union
+		    ]]>
+		    
+		    <![CDATA[
+		    SELECT DISTINCT
+		                    t.NAME,
+		                    t.id,
+		                    t.LINKMAN_TYPE,
+		                    cust.name companyName,
+		                    (select cdept.name from ecc_cust.ecc_cust_customer_dept cdept where cdept.id=t.Customer_Dept_Id) deptName,
+		                    t.TITLE,
+		t.TITLE_LEVEL,
+		t.LEVEL_,
+		t.Ds_Level,
+		t.RELATION_LEVEL,
+		t.MOBILE_PHONE,
+		t.OFFICE_PHONE,
+		t.POST_CODE,
+		t.EMAIL,
+		t.VERIFY_FLAG,
+		t.OTHER_TYPE_FLAG,
+		t.address,
+		t.communication_address,
+		t.HOME_POST_CODE,
+		t.HOME_PHONE,
+		t.BIRTHDAY,
+		t.CONTACT_FLAG,
+		TO_CHAR(cust.LAST_UPDATE_TIME, 'YYYY-MM-DD') LASTUPDATEDATE,
+		t.OUR_VISIT_DUTY_EMP    userFullName,
+		ecc_cust.ecc_cust_pkg.get_custperson_product_info(t.id) AS PRIMARY_PRODUCT_NAME,
+		t.person_type,
+		t.language,
+		t.Sex,
+		t.Languagetype,
+		t.Duty,
+		t.Currnet_Country,
+		t.zte_person_a,
+		t.is_encrypt,
+        t.created_by, 'true' as authData,
+        t.OPERATOR_TYPE,
+        t.OPERATOR_LEVEL
+		                    
+		                    
+		                FROM
+		                    ECC_CUST.ECC_CUST_PERSON_INFO t,
+		                    ECC_CUST.ECC_CUST_CUSTOMER cust
+		                WHERE
+		                    t.enable_flag = 'T'
+		                AND cust.enable_flag = 'T'
+		                AND cust.id = t.customer_id
+		                AND cust.id IN
+		                                (
+		                                SELECT DISTINCT
+		                                    CUSTOMER_ID
+		                                FROM
+		                                    ECC_CUST.ECC_CUST_CUSTOMER_POWER eccp
+		                                WHERE
+		                                    eccp.employeeid = $authorityVO.userId$
+		                                    and eccp.enable_flag='M')
+						AND cust.id = $custPersonVO.customerId$
+						and (t.IS_TEMP='0' or t.IS_TEMP is null)
+		                UNION
+		                SELECT DISTINCT
+		                t.NAME,
+		                    t.id,
+		                     t.LINKMAN_TYPE,
+		                     cust.name companyName,
+		                     (select cdept.name from ecc_cust.ecc_cust_customer_dept cdept where cdept.id=t.Customer_Dept_Id) deptName,
+		                     t.TITLE,
+		t.TITLE_LEVEL,
+		t.LEVEL_,
+		t.Ds_Level,
+		t.RELATION_LEVEL,
+		t.MOBILE_PHONE,
+		t.OFFICE_PHONE,
+		t.POST_CODE,
+		t.EMAIL,
+		t.VERIFY_FLAG,
+		t.OTHER_TYPE_FLAG,
+		t.address,
+		t.communication_address,
+		t.HOME_POST_CODE,
+		t.HOME_PHONE,
+		t.BIRTHDAY,
+		t.CONTACT_FLAG,
+		TO_CHAR(cust.LAST_UPDATE_TIME, 'YYYY-MM-DD') LASTUPDATEDATE,
+		t.OUR_VISIT_DUTY_EMP    userFullName,
+		ecc_cust.ecc_cust_pkg.get_custperson_product_info(t.id) AS PRIMARY_PRODUCT_NAME,
+		t.person_type,
+		t.language,
+		t.Sex,
+		t.Languagetype,
+		t.Duty,
+		t.Currnet_Country,
+		t.zte_person_a,
+		t.is_encrypt,
+        t.created_by , 'true' as authData,
+        t.OPERATOR_TYPE,
+        t.OPERATOR_LEVEL
+		                FROM
+		                    ECC_CUST.ECC_CUST_PERSON_INFO t,
+		                    ECC_CUST.ECC_CUST_CUSTOMER cust
+		                WHERE
+		                    t.enable_flag = 'T'
+		                AND cust.enable_flag = 'T'
+		                AND cust.id = t.customer_id
+		                AND cust.id IN
+		                                            (
+		                                            
+		                                             SELECT DISTINCT
+										                    ucoa.CUST_ORG_ID
+										                FROM
+										                    ECC_FND.ECC_FND_USERORG_CUST_ORG_AUTH ucoa
+										                WHERE
+										                ucoa.ENABLE_FLAG='T'
+										                AND ucoa.CUST_ORG_ID=$custPersonVO.customerId$
+										                and USER_ORG_ID in (
+										                SELECT dept.DEPT_ID
+										                    FROM ECC_FND.ECC_FND_DEPT dept
+										                   WHERE ENABLE_FLAG = 'T'
+										                   START WITH dept.DEPT_ID IN
+										                              (SELECT AUTH_DEPT_ID
+										                                 FROM ECC_FND.ECC_FND_AUTHORITY
+										                                where ENABLE_FLAG = 'T'
+										                                  AND AUTH_TYPE = 'ORG_TYPE'
+										                                  AND AUTH_TITLE_ID IN (41,42,43,51,52,53,54,55,56,57,58,59,60,62,950,1590,4800,4801,4803,5123,8100,8200,8300,8400,8500,8600,8620,8700,9301,9302,9303,9304,9305,9306,9310,20010,20020,35221,40000,40010,40020,40030,40080,40100,40110,40120,40130,40140,45301,80008,80010,80011,3000240,3000242,3000262,3000340,3000341,3000342,3000343,3000350,3000720,3000721,3000722,3000723,3035640,6100120,6100131,8100000,22100003,22100004,22100012)
+										                                  AND EMPLOYEE_ID = $authorityVO.userId$)
+										                  CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+										                  )
+										                  union
+										                  select ID CUST_ORG_ID from ecc_cust.ecc_cust_customer where master_dept_id in (
+															SELECT
+															   DISTINCT dept.DEPT_ID
+															FROM
+															    ECC_FND.ECC_FND_AUTHORITY auth,
+															    ECC_FND.ECC_FND_DEPT dept
+															WHERE
+															    auth.AUTH_DEPT_ID=dept.DEPT_ID
+															AND auth.ENABLE_FLAG = 'T'
+															AND AUTH_TYPE = 'ORG_TYPE'
+															AND AUTH_TITLE_ID IN (41,42,43,51,52,53,54,55,56,57,58,59,60,62,950,1590,4800,4801,4803,5123,8100,8200,8300,8400,8500,8600,8620,8700,9301,9302,9303,9304,9305,9306,9310,20010,20020,35221,40000,40010,40020,40030,40080,40100,40110,40120,40130,40140,45301,80008,80010,80011,3000240,3000242,3000262,3000340,3000341,3000342,3000343,3000350,3000720,3000721,3000722,3000723,3035640,6100120,6100131,8100000,22100003,22100004,22100012)
+															AND EMPLOYEE_ID = $authorityVO.userId$
+															AND LEVEL_=4
+															) and ID=$custPersonVO.customerId$
+		                                            )
+						and (t.IS_TEMP='0' or t.IS_TEMP is null)
+		                UNION
+		                SELECT DISTINCT
+		                t.NAME,
+		                    t.id,
+		                     t.LINKMAN_TYPE,
+		                    cust.name companyName,
+		                    (select cdept.name from ecc_cust.ecc_cust_customer_dept cdept where cdept.id=t.Customer_Dept_Id) deptName,
+		                    t.TITLE,
+		t.TITLE_LEVEL,
+		t.LEVEL_,
+		t.Ds_Level,
+		t.RELATION_LEVEL,
+		t.MOBILE_PHONE,
+		t.OFFICE_PHONE,
+		t.POST_CODE,
+		t.EMAIL,
+		t.VERIFY_FLAG,
+		t.OTHER_TYPE_FLAG,
+		t.address,
+		t.communication_address,
+		t.HOME_POST_CODE,
+		t.HOME_PHONE,
+		t.BIRTHDAY,
+		t.CONTACT_FLAG,
+		TO_CHAR(cust.LAST_UPDATE_TIME, 'YYYY-MM-DD') LASTUPDATEDATE,
+		t.OUR_VISIT_DUTY_EMP    userFullName,
+		ecc_cust.ecc_cust_pkg.get_custperson_product_info(t.id) AS PRIMARY_PRODUCT_NAME,
+		t.person_type,
+		t.language,
+		t.Sex,
+		t.Languagetype,
+		t.Duty,
+		t.Currnet_Country,
+		t.zte_person_a,
+		t.is_encrypt,
+        t.created_by , 'true' as authData,
+        t.OPERATOR_TYPE,
+        t.OPERATOR_LEVEL
+		                FROM
+		                    ECC_CUST.ECC_CUST_PERSON_INFO t,
+		                    ECC_CUST.ECC_CUST_CUSTOMER cust
+		                WHERE
+		                    t.enable_flag = 'T'
+		                AND cust.enable_flag = 'T'
+		                AND cust.id = t.customer_id
+		                AND t.id IN
+		                             (
+		                             SELECT DISTINCT
+		                                 euca.cust_person_id
+		                             FROM
+		                                 ECC_FND.ECC_FND_USER_CONTACT_AUTH euca
+		                             WHERE
+		                                 euca.user_id = $authorityVO.userId$ and euca.enable_flag='T')
+						AND cust.id = $custPersonVO.customerId$
+						and (t.IS_TEMP='0' or t.IS_TEMP is null)
+		                UNION
+		                SELECT DISTINCT
+		                t.NAME,
+		                    t.id,
+		                     t.LINKMAN_TYPE,
+		                    cust.name companyName,
+		                    (select cdept.name  from ecc_cust.ecc_cust_customer_dept cdept where cdept.id=t.Customer_Dept_Id) deptName,
+		                    t.TITLE,
+		t.TITLE_LEVEL,
+		t.LEVEL_,
+		t.Ds_Level,
+		t.RELATION_LEVEL,
+		t.MOBILE_PHONE,
+		t.OFFICE_PHONE,
+		t.POST_CODE,
+		t.EMAIL,
+		t.VERIFY_FLAG,
+		t.OTHER_TYPE_FLAG,
+		t.address,
+		t.communication_address,
+		t.HOME_POST_CODE,
+		t.HOME_PHONE,
+		t.BIRTHDAY,
+		t.CONTACT_FLAG,
+		TO_CHAR(cust.LAST_UPDATE_TIME, 'YYYY-MM-DD') LASTUPDATEDATE,
+		t.OUR_VISIT_DUTY_EMP    userFullName,
+		ecc_cust.ecc_cust_pkg.get_custperson_product_info(t.id) AS PRIMARY_PRODUCT_NAME,
+		t.person_type,
+		t.language,
+		t.Sex,
+		t.Languagetype,
+		t.Duty,
+		t.Currnet_Country,
+		t.zte_person_a,
+		t.is_encrypt,
+        t.created_by , 'false' as authData,
+        t.OPERATOR_TYPE,
+        t.OPERATOR_LEVEL
+        FROM
+            ECC_CUST.ECC_CUST_PERSON_INFO t,
+            ECC_CUST.ECC_CUST_CUSTOMER cust
+        WHERE
+            t.enable_flag = 'T'
+        AND cust.enable_flag = 'T'
+        AND cust.id = t.customer_id
+        /*AND t.created_by = $authorityVO.userId$*/
+        AND cust.id = $custPersonVO.customerId$
+        and (t.IS_TEMP='0' or t.IS_TEMP is null)
+        and person_type='20'
+		 ]]>
+		       
+				<dynamic prepend="">
+				  <isEqual prepend="" property="isCrm" compareValue="true">
+				  	<isEqual prepend="" property="linkManType" compareValue="S001">
+						 <isNotEmpty prepend="and" property="deptList">
+								cust.master_dept_id in
+						 		<iterate open="(" close=")" conjunction="," property="deptList">
+								 	#deptList[]#
+								 </iterate>
+						</isNotEmpty>
+					</isEqual>
+					<isEqual prepend="" property="linkManType" compareValue="S003">
+						 <isNotEmpty prepend="and" property="deptList">
+								cust.master_dept_id in
+						 		<iterate open="(" close=")" conjunction="," property="deptList">
+								 	#deptList[]#
+								 </iterate>
+						</isNotEmpty>
+					</isEqual>
+					<isEqual prepend="" property="linkManType" compareValue="S002">
+						and t.id in (
+								select ID from ecc.ecc_cust_person_info where CREATED_BY in (
+									select EMPLYEE_ID from ecc_fnd.ecc_fnd_emplyees where EMPLYEE_ID in (
+									select EMPLOYEE_ID from ECC_FND.ECC_FND_AUTH_LINKMANTYPE where LINKMANTYPE='S002'
+									)  
+									<isNotEmpty prepend="and" property="deptList">
+										 DEPT_ID in
+								 		<iterate open="(" close=")" conjunction="," property="deptList">
+										 	#deptList[]#
+										 </iterate>
+									</isNotEmpty>
+								)
+								or (ZTE_PERSON_A in (
+								
+									select EMPLYEE_ID from ecc_fnd.ecc_fnd_emplyees where EMPLYEE_ID in (
+										select EMPLOYEE_ID from ECC_FND.ECC_FND_AUTH_LINKMANTYPE where LINKMANTYPE='S002'
+										)  
+										<isNotEmpty prepend="and" property="deptList">
+											 DEPT_ID in
+									 		<iterate open="(" close=")" conjunction="," property="deptList">
+											 	#deptList[]#
+											 </iterate>
+										</isNotEmpty>
+								
+								) )
+								)
+					</isEqual>
+				  </isEqual>
+				  <isNotEqual prepend="and" property="isCrm" compareValue="true">
+				  	(
+				  	t.created_by=$authorityVO.userId$
+				  	or 
+				  	(t.ZTE_PERSON_A=$authorityVO.userId$ and person_type='20')
+				  	)
+				  </isNotEqual>
+				</dynamic>  
+				
+		        <![CDATA[ 
+		                
+		    ) 
+		    select * from (
+		SELECT
+		    *
+		FROM
+		    (
+		        SELECT
+		            a.NAME,
+		            resultTable.id,
+		            a.LINKMAN_TYPE,
+		            resultTable.companyName,
+		            cdept.name deptName,
+		            a.TITLE,
+		            a.TITLE_LEVEL,
+		            a.LEVEL_,
+		            a.Ds_Level,
+		            a.RELATION_LEVEL,
+		            a.MOBILE_PHONE,
+		            a.OFFICE_PHONE,
+		            a.POST_CODE,
+		            a.EMAIL,
+		            a.VERIFY_FLAG,
+		            a.OTHER_TYPE_FLAG,
+		            a.address,
+		            a.communication_address,
+		            a.HOME_POST_CODE,
+		            a.HOME_PHONE,
+		            a.BIRTHDAY,
+		            a.CONTACT_FLAG,
+		            TO_CHAR(resultTable.LAST_UPDATE_TIME, 'YYYY-MM-DD')               LASTUPDATEDATE,
+		            A.OUR_VISIT_DUTY_EMP                                              userFullName,
+		            ecc_cust.ecc_cust_pkg.get_custperson_product_info(resultTable.ID) AS
+		            PRIMARY_PRODUCT_NAME,
+		            a.person_type,
+		            a.language,
+		            a.Sex,
+		            a.Languagetype,
+		            a.Duty,
+		            a.Currnet_Country,
+		            viewTable.resultCount,
+		            ROWNUM AS resultNums,
+		            a.zte_person_a,
+		            a.is_encrypt,
+                        a.created_by     , 'false' as authData,
+        			a.OPERATOR_TYPE,
+            		a.OPERATOR_LEVEL
+		        FROM
+		            resultTable ,
+		            (
+		                SELECT
+		                    COUNT(1) AS resultCount
+		                FROM
+		                    (select resultTable1.id from resultTable1 union select  resultTable.id from resultTable)) viewTable ,
+		            ecc_cust.ecc_cust_customer_dept cdept,
+		            ECC_CUST.ECC_CUST_PERSON_INFO A
+		        WHERE
+		            ROWNUM <= #pageControlData.endRowNum#
+		        AND resultTable.id = a.id
+		        AND cdept.id(+) = A.Customer_Dept_Id 
+		         ]]>
+		        <![CDATA[ 
+		        )WHERE resultNums>#pageControlData.startRowNum#
+		        
+		        UNION
+		   
+		(
+		select * from (
+		SELECT
+		    
+		    resultTable1.NAME,
+		                    resultTable1.id,
+		                     resultTable1.LINKMAN_TYPE,
+		                    resultTable1.companyName,
+		                    resultTable1.deptName,
+		                    resultTable1.TITLE,
+		resultTable1.TITLE_LEVEL,
+		resultTable1.LEVEL_,
+		resultTable1.Ds_Level,
+		resultTable1.RELATION_LEVEL,
+		resultTable1.MOBILE_PHONE,
+		resultTable1.OFFICE_PHONE,
+		resultTable1.POST_CODE,
+		resultTable1.EMAIL,
+		resultTable1.VERIFY_FLAG,
+		resultTable1.OTHER_TYPE_FLAG,
+		resultTable1.address,
+		resultTable1.communication_address,
+		resultTable1.HOME_POST_CODE,
+		resultTable1.HOME_PHONE,
+		resultTable1.BIRTHDAY,
+		resultTable1.CONTACT_FLAG,
+		resultTable1.LASTUPDATEDATE,
+		resultTable1.userFullName,
+		resultTable1.PRIMARY_PRODUCT_NAME,
+		resultTable1.person_type,
+		resultTable1.language,
+		resultTable1.Sex,
+		resultTable1.Languagetype,
+		resultTable1.Duty,
+		resultTable1.Currnet_Country,
+		viewTable.resultCount,
+		ROWNUM AS resultNums,
+		resultTable1.zte_person_a,
+		resultTable1.is_encrypt,
+        resultTable1.created_by, resultTable1.authData,
+        resultTable1.OPERATOR_TYPE,
+        resultTable1.OPERATOR_LEVEL
+		FROM
+		    resultTable1,
+		    (
+		                SELECT
+		                    COUNT(1) AS resultCount
+		                FROM
+		                    (select resultTable1.id from resultTable1 union select  resultTable.id from resultTable)) viewTable
+		                     WHERE
+		            ROWNUM <= #pageControlData.endRowNum#) WHERE resultNums>#pageControlData.startRowNum#)
+		            ) order by AUTHDATA asc
+ ]]>
+</select>
+
+  <insert id="savePersonInfo" parameterClass="custPersonVO">
+ <![CDATA[
+ INSERT INTO ECC_CUST.ECC_CUST_PERSON_INFO info(
+ info.id
+ ,info.name
+ ,info.sex
+ ,info.level_
+ ,info.relation_level
+ ,info.birthday
+ ,info.title
+ ,info.native_place
+ ,info.marriage 
+ ,info.folk 
+ ,info.party
+ ,info.foreign_language_level
+ ,info.high_educational_level
+ ,info.office_phone 
+ ,info.home_phone 
+ ,info.address 
+ ,info.communication_address
+ ,info.email 
+ ,info.mobile_phone 
+ ,info.care_educational_level 
+ ,info.family_importance
+ ,info.main_influence_family
+ ,info.enter_company_time 
+ ,info.prev_title 
+ ,info.prev_title_time
+ ,info.carest 
+ ,info.especially_interest 
+ ,info.customer_id 
+ ,info.customer_dept_id 
+ ,info.dept_id 
+ ,info.post_code 
+ ,info.memo 
+ ,info.created_by
+ ,info.creation_time
+ ,info.last_updated_by
+ ,info.last_update_time
+ ,info.enable_flag
+ ,info.faith 
+ ,info.fax 
+ ,info.language 
+ ,info.ds_level
+ ,info.nationality 
+ ,info.linkman_type 
+ ,info.person_type 
+ ,info.linkman_background 
+ ,info.area_id 
+ ,info.core_ds
+ ,info.home_post_code 
+ ,info.our_visit_duty_emp
+ ,info.title_level
+ ,info.newstyle_flag
+ ,info.verify_flag
+ ,info.duty
+ ,info.idcode
+ ,info.passport
+ ,info.languageType
+ ,info.CONTACT_FLAG
+ ,info.OTHER_TYPE_FLAG
+ ,info.currnet_country
+ ,info.product_category
+ ,info.nowAddr
+ ,info.otherPhone
+ ,info.RECEPITON_LEVEL) 
+ VALUES(#id#,
+ #name#,
+ #sex#,
+ #level#,
+ #relationLevel#,
+ to_date(#birthday#,'yyyy-MM-dd'),
+ #title#,
+ #nativePlace#,
+ #marriAge#,
+ #folk#,
+ #party#,
+ #foreignLanguageLevel#,
+ #highEducationalLevel#,
+ #officePhone#,
+ #homePhone#,
+ #address#,
+ #communicationAddress#,
+ #email#,
+ #mobilePhone#,
+ #careEducationalLevel#,
+ #familyImportance#,
+ #mainInfluenceFamily#,
+ to_date(#enterCompanyTime#,'yyyy-MM-dd'),
+ #prevTitle#,
+ to_date(#prevTitleTime#,'yyyy-MM-dd'),
+ #carest#,
+ #especiallyInterest#,
+ #customerId#,
+ #customerDeptId#,
+ #deptId#,
+ #postCode#,
+ #memo#,
+ #createdBy#,
+ systimestamp,
+ #lastUpdatedBy#,
+ systimestamp,
+ #enabledFlag#,
+ #faith#,
+ #fax#,
+ #language#,
+ #dsLevel#,
+ #nationality#,
+ #linkManType#,
+ #personType#,
+ #linkmanBackGround#, 
+ #areaId#, 
+ #coreDs#, 
+ #homePostCode#, 
+ #ourVisitDutyEmp#,
+ #titleLevel#,
+ #newstyleFlag#,
+ #verifyFlag#,
+ #duty#,
+ #idcode#,
+ #passport#,
+ #languageType#,
+ #contactFlag#,
+ #otherTypeFlag#,
+ #currentCounty#,
+ #productCategory#,
+ #nowAddr#,
+ #otherPhone#,
+ #recepitonLevel:VARCHAR#)
+ ]]>
+  </insert>
+
+  <update id="updatePersonInfo" parameterClass="custPersonVO">
+ <![CDATA[
+ UPDATE ECC_CUST.ECC_CUST_PERSON_INFO info
+ SET 
+ info.id = #id#,
+ info.name = #name#,
+ info.sex = #sex#,
+ info.level_ = #level#,
+ info.relation_level = #relationLevel#,
+ info.birthday = to_date(#birthday#,'yyyy-MM-dd'),
+ info.title = #title#,
+ info.native_place = #nativePlace#,
+ info.marriage = #marriAge#,
+ info.folk = #folk#,
+ info.party = #party#,
+ info.foreign_language_level = #foreignLanguageLevel#,
+ info.high_educational_level = #highEducationalLevel#,
+ info.office_phone = #officePhone#,
+ info.home_phone = #homePhone#,
+ info.address = #address#,
+ info.communication_address = #communicationAddress#,
+ info.email = #email#,
+ info.mobile_phone = #mobilePhone#,
+ info.care_educational_level = #careEducationalLevel#,
+ info.family_importance = #familyImportance#,
+ info.main_influence_family = #mainInfluenceFamily#,
+ info.enter_company_time = to_date(#enterCompanyTime#,'yyyy-MM-dd'),
+ info.prev_title = #prevTitle#,
+ info.prev_title_time = to_date(#prevTitleTime#,'yyyy-MM-dd'),
+ info.carest = #carest#,
+ info.especially_interest = #especiallyInterest#,
+ info.customer_id = #customerId#,
+ info.customer_dept_id = #customerDeptId#,
+ info.dept_id = #deptId#,
+ info.post_code = #postCode#,
+ info.memo = #memo#,
+ info.last_updated_by = #lastUpdatedBy#,
+ info.last_update_time =systimestamp,
+ info.enable_flag = #enabledFlag#,
+ info.faith = #faith#,
+ info.fax = #fax#,
+ info.language = #language#,
+ info.ds_level = #dsLevel#,
+ info.nationality = #nationality#,
+ info.linkman_type = #linkManType#,
+ info.person_type = #personType#,
+ info.linkman_background = #linkmanBackGround#, 
+ info.area_id = #areaId#, 
+ info.core_ds = #coreDs#, 
+ info.home_post_code = #homePostCode#, 
+ info.our_visit_duty_emp = #ourVisitDutyEmp#,
+ info.title_level = #titleLevel#,
+ info.newstyle_flag = 'Y',
+ info.verify_flag = #verifyFlag#,
+ info.duty = #duty#,
+ info.idcode = #idcode#,
+ info.passport = #passport#,
+ info.languageType = #languageType#,
+ info.CONTACT_FLAG = #contactFlag#,
+ info.currnet_country =#currentCounty#,
+ info.product_category =#productCategory#,
+ info.nowAddr =#nowAddr#,
+ info.otherPhone =#otherPhone#,
+ info.RECEPITON_LEVEL =#recepitonLevel:VARCHAR#
+ WHERE 
+ info.id = #id#
+ ]]>
+  </update>
+
+<update id="updatePersonPicture" parameterClass="java.util.HashMap">
+     <![CDATA[
+           UPDATE ECC_FND.DOC_STORE store
+           SET 
+           store.url = #url#,
+           WHERE store.relate_id = #relateId#
+           and   store.url like '%@contactPicture@.%'
+     ]]>
+</update>
+
+  <update id="deletePersonInfo" parameterClass="java.lang.Integer">
+ <![CDATA[
+ UPDATE ECC_CUST.ECC_CUST_PERSON_INFO info
+ SET info.enable_flag = 'F'
+ WHERE id = #id#
+ ]]>
+  </update>
+
+  <select id="loadPersonWInfoList" parameterClass="custPersonVO" resultMap="get-CustPersonLinkman-result">
+ <![CDATA[
+ SELECT PERSON.NAME 
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO PERSON,
+ ECC_CUST.ECC_CUST_CUSTOMER CUST
+ WHERE PERSON.ENABLE_FLAG = 'T'
+ AND CUST.ID = PERSON.CUSTOMER_ID
+ AND PERSON.NAME = #name#
+ AND PERSON.CUSTOMER_ID = #customerId#
+ ]]>
+  </select>
+
+  <select id="loadPersonInfoList" parameterClass="custPersonBO" resultMap="get-CustPersonList-result">
+ <![CDATA[
+WITH resultTable AS (
+ select CUSTPERSON.id
+ ,CUSTPERSON.NAME
+ ,CUSTPERSON.LINKMAN_TYPE
+ ,CUSTPERSON.companyName
+ ,CUSTPERSON.deptName
+ ,CUSTPERSON.TITLE
+ ,CUSTPERSON.TITLE_LEVEL
+ ,CUSTPERSON.LEVEL_
+ ,CUSTPERSON.Ds_Level
+ ,CUSTPERSON.RELATION_LEVEL
+ ,CUSTPERSON.MOBILE_PHONE
+ ,CUSTPERSON.OFFICE_PHONE
+ ,CUSTPERSON.POST_CODE
+ ,CUSTPERSON.EMAIL
+ ,CUSTPERSON.VERIFY_FLAG
+ ,CUSTPERSON.LAST_UPDATE_TIME 
+ ,CUSTPERSON.customer_type
+ ,CUSTPERSON.BIRTHDAY
+ ,CUSTPERSON.CONTACT_FLAG
+ ,CUSTPERSON.ESPECIALLY_INTEREST
+ ,CUSTPERSON.PERSON_TYPE
+ ,CUSTPERSON.OUR_VISIT_DUTY_EMP
+ ,CUSTPERSON.communication_address
+ ,CUSTPERSON.HOME_POST_CODE
+ ,CUSTPERSON.HOME_PHONE
+ ,CUSTPERSON.language
+ ,CUSTPERSON.Sex
+ ,CUSTPERSON.Languagetype
+ ,CUSTPERSON.Duty
+ ,CUSTPERSON.Currnet_Country
+ ,CUSTPERSON.address
+ ,rownum AS resultNums
+ ,CUSTPERSON.OTHER_TYPE_FLAG
+ FROM( 
+ SELECT 
+ A.id,
+ A.NAME, 
+ A.LINKMAN_TYPE,
+ B.NAME companyName, 
+ cdept.name deptName,
+ A.TITLE,
+ A.TITLE_LEVEL,
+ A.LEVEL_, 
+ A.Ds_Level,
+ A.RELATION_LEVEL,
+ A.MOBILE_PHONE,
+ A.OFFICE_PHONE,
+ A.POST_CODE,
+ A.EMAIL,
+ A.VERIFY_FLAG,
+ A.LAST_UPDATE_TIME,
+ b.customer_type,
+ TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') BIRTHDAY,
+ A.CONTACT_FLAG,
+ A.ESPECIALLY_INTEREST,
+ A.PERSON_TYPE,
+ B.MASTER_DEPT_ID,
+ A.OUR_VISIT_DUTY_EMP,
+ a.address,
+ a.communication_address,
+ A.HOME_POST_CODE,
+ A.HOME_PHONE,
+ A.language,
+ A.Sex,
+ A.Languagetype,
+ A.Duty,
+ A.Currnet_Country
+ ,A.OTHER_TYPE_FLAG
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ecc_cust.ecc_cust_customer_dept cdept,
+ ECC_CUST.ECC_CUST_CUSTOMER B,
+ ECC_CUST.ECC_CUST_CUSTOMER_POWER p
+ WHERE a.customer_id = b.id
+ and A.Customer_Dept_Id = cdept.id(+)
+ and p.customer_id= b.id
+ and a.enable_flag = 'T'
+ and b.enable_flag = 'T'
+ and p.employeeid = $authorityVO.userId$
+ 
+ union
+ 
+ 
+ SELECT 
+ A.id,
+ A.NAME, 
+ A.LINKMAN_TYPE,
+ B.NAME companyName, 
+ cdept.name deptName,
+ A.TITLE,
+ A.TITLE_LEVEL,
+ A.LEVEL_, 
+ A.Ds_Level,
+ A.RELATION_LEVEL,
+ A.MOBILE_PHONE,
+ A.OFFICE_PHONE,
+ A.POST_CODE,
+ A.EMAIL,
+ A.VERIFY_FLAG,
+ 
+ A.LAST_UPDATE_TIME,
+ b.customer_type,
+ TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') BIRTHDAY,
+ A.CONTACT_FLAG,
+ A.ESPECIALLY_INTEREST,
+ A.PERSON_TYPE,
+ B.MASTER_DEPT_ID,
+ A.OUR_VISIT_DUTY_EMP,
+ a.address,
+ a.communication_address,
+ A.HOME_POST_CODE,
+ A.HOME_PHONE,
+ A.language,
+ A.Sex,
+ A.Languagetype,
+ A.Duty,
+ A.Currnet_Country
+ ,A.OTHER_TYPE_FLAG
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ecc_cust.ecc_cust_customer_dept cdept,
+ ECC_CUST.ECC_CUST_CUSTOMER B 
+ WHERE a.customer_id = b.id
+ and b.enable_flag = 'T'
+ and A.Customer_Dept_Id = cdept.id(+)
+ and b.master_dept_id in
+ (
+ SELECT column_value 
+ FROM table(ecc_fnd.get_authority_dept_id($authorityVO.userId$,'5001,40000,8200,40130,8100'))
+ )
+ and a.enable_flag = 'T'
+ 
+ union
+ 
+ SELECT 
+ A.id,
+ A.NAME, 
+ A.LINKMAN_TYPE,
+ B.NAME companyName, 
+ cdept.name deptName,
+ A.TITLE,
+ A.TITLE_LEVEL,
+ A.LEVEL_, 
+ A.Ds_Level,
+ A.RELATION_LEVEL,
+ A.MOBILE_PHONE,
+ A.OFFICE_PHONE,
+ A.POST_CODE,
+ A.EMAIL,
+ A.VERIFY_FLAG,
+ 
+ A.LAST_UPDATE_TIME,
+ b.customer_type,
+ TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') BIRTHDAY,
+ A.CONTACT_FLAG,
+ A.ESPECIALLY_INTEREST,
+ A.PERSON_TYPE,
+ B.MASTER_DEPT_ID,
+ A.OUR_VISIT_DUTY_EMP,
+ a.address,
+ a.communication_address,
+ A.HOME_POST_CODE,
+ A.HOME_PHONE,
+ A.language,
+ A.Sex,
+ A.Languagetype,
+ A.Duty,
+ A.Currnet_Country
+ ,A.OTHER_TYPE_FLAG
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ecc_cust.ecc_cust_customer_dept cdept,
+ ECC_CUST.ECC_CUST_CUSTOMER B 
+ WHERE a.customer_id = b.id
+ and b.enable_flag = 'T'
+ and A.Customer_Dept_Id = cdept.id(+)
+ and a.enable_flag = 'T'
+ and a.OTHER_TYPE_FLAG='N'
+ 
+ union
+ SELECT 
+ A.id,
+ A.NAME, 
+ A.LINKMAN_TYPE,
+ B.NAME companyName, 
+ cdept.name deptName,
+ A.TITLE,
+ A.TITLE_LEVEL,
+ A.LEVEL_, 
+ A.Ds_Level,
+ A.RELATION_LEVEL,
+ A.MOBILE_PHONE,
+ A.OFFICE_PHONE,
+ A.POST_CODE,
+ A.EMAIL,
+ A.VERIFY_FLAG,
+ A.LAST_UPDATE_TIME,
+ b.customer_type,
+ TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') BIRTHDAY,
+ A.CONTACT_FLAG,
+ A.ESPECIALLY_INTEREST,
+ A.PERSON_TYPE,
+ B.MASTER_DEPT_ID,
+ A.OUR_VISIT_DUTY_EMP,
+ a.address,
+ a.communication_address,
+ A.HOME_POST_CODE,
+ A.HOME_PHONE,
+ A.language,
+ A.Sex,
+ A.Languagetype,
+ A.Duty,
+ A.Currnet_Country
+ ,A.OTHER_TYPE_FLAG
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ecc_cust.ecc_cust_customer_dept cdept,
+ ECC_CUST.ECC_CUST_CUSTOMER B 
+ WHERE a.customer_id = b.id
+ and A.Customer_Dept_Id = cdept.id(+)
+ and b.enable_flag = 'T'
+ and a.enable_flag = 'T'
+ and a.LINKMAN_TYPE = 'EPM'
+ and b.master_dept_id in
+ (
+ SELECT column_value 
+ FROM table(ecc_fnd.get_authority_dept_id($authorityVO.userId$,'8600,8610,8620'))
+ )
+ 
+ UNION
+ 
+ SELECT 
+ A.id,
+ A.NAME, 
+ A.LINKMAN_TYPE,
+ B.NAME companyName, 
+ cdept.name deptName,
+ A.TITLE,
+ A.TITLE_LEVEL,
+ A.LEVEL_, 
+ A.Ds_Level,
+ A.RELATION_LEVEL,
+ A.MOBILE_PHONE,
+ A.OFFICE_PHONE,
+ A.POST_CODE,
+ A.EMAIL,
+ A.VERIFY_FLAG,
+ A.LAST_UPDATE_TIME,
+ b.customer_type,
+ TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') BIRTHDAY,
+ A.CONTACT_FLAG,
+ A.ESPECIALLY_INTEREST,
+ A.PERSON_TYPE,
+ B.MASTER_DEPT_ID,
+ A.OUR_VISIT_DUTY_EMP,
+ a.address,
+ a.communication_address,
+ A.HOME_POST_CODE,
+ A.HOME_PHONE,
+ A.language,
+ A.Sex,
+ A.Languagetype,
+ A.Duty,
+ A.Currnet_Country
+ ,A.OTHER_TYPE_FLAG
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A,
+ ecc_cust.ecc_cust_customer_dept cdept, 
+ ECC_CUST.ECC_CUST_CUSTOMER B 
+ WHERE a.customer_id = b.id 
+ and b.enable_flag = 'T'
+ and a.enable_flag ='T'
+ and a.Customer_Dept_Id = cdept.id(+) 
+ and b.master_dept_id in(
+ SELECT column_value 
+ FROM table(ecc_fnd.get_authority_dept_id($authorityVO.userId$,'40140'))
+ )
+ and INSTR('BQ003,BQ004',A.LEVEL_) > 0
+ )CUSTPERSON
+ WHERE 1 = 1 
+ ]]>
+    <dynamic prepend="">
+      <isNotEmpty prepend="AND" property="custPersonVO.birthday">
+ <![CDATA[(CUSTPERSON.BIRTHDAY >= #custPersonVO.birthday#)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="tempbirthday">
+ <![CDATA[(CUSTPERSON.BIRTHDAY < to_date(#tempbirthday#,'YYYY-MM-DD') + 1)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+ <![CDATA[(CUSTPERSON.LAST_UPDATE_TIME > #custPersonVO.lastUpdateDate#)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="lastUpdateDate">
+ <![CDATA[(CUSTPERSON.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+      </isNotEmpty>
+
+      <isNotEmpty prepend="AND" property="customerType">
+ <![CDATA[(CUSTPERSON.customer_type = #customerType#)]]>
+      </isNotEmpty>
+
+      <isNotEmpty prepend="AND" property="custPersonVO.name">
+ <![CDATA[(upper(CUSTPERSON.NAME) like '%' ||upper(#custPersonVO.name#)||'%')]]>
+      </isNotEmpty>
+
+      <isNotEmpty prepend="AND" property="companyName">
+ <![CDATA[(CUSTPERSON.companyName LIKE '%' || #companyName# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="deptName">
+ <![CDATA[(CUSTPERSON.deptName LIKE '%' ||#deptName# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.titleLevel">
+ <![CDATA[(CUSTPERSON.TITLE_LEVEL = #custPersonVO.titleLevel# )]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.title">
+ <![CDATA[(CUSTPERSON.TITLE LIKE '%' || #custPersonVO.title# || '%')]]>
+      </isNotEmpty>
+      <isEqual prepend="AND" property="custPersonVO.linkManType" compareValue="EPM">
+ <![CDATA[(CUSTPERSON.LINKMAN_TYPE LIKE #custPersonVO.linkManType#)]]>
+      </isEqual>
+      <isNotEqual prepend="AND" property="custPersonVO.dsLevel" compareValue="0">
+ <![CDATA[CUSTPERSON.Ds_Level LIKE #custPersonVO.dsLevel#]]>
+      </isNotEqual>
+
+      <isNotEqual prepend="AND" property="custPersonVO.verifyFlag" compareValue="A">
+ <![CDATA[CUSTPERSON.VERIFY_FLAG LIKE #custPersonVO.verifyFlag#]]>
+      </isNotEqual>
+
+      <isNotEmpty prepend="AND" property="custPersonVO.email">
+ <![CDATA[(CUSTPERSON.EMAIL LIKE #custPersonVO.email# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.especiallyInterest">
+ <![CDATA[(CUSTPERSON.ESPECIALLY_INTEREST LIKE #custPersonVO.especiallyInterest# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.relationLevel">
+ <![CDATA[(CUSTPERSON.RELATION_LEVEL=#custPersonVO.relationLevel#)]]>
+      </isNotEmpty>
+      <isEqual prepend="AND" property="custPersonVO.contactFlag" compareValue="Y">
+ <![CDATA[(CUSTPERSON.CONTACT_FLAG<>'N' or CUSTPERSON.CONTACT_FLAG is null)]]>
+      </isEqual>
+      <isEqual prepend="AND" property="custPersonVO.contactFlag" compareValue="N">
+ <![CDATA[(CUSTPERSON.CONTACT_FLAG='N')]]>
+      </isEqual>
+
+      <isNotEmpty prepend="AND" property="custPersonVO.level">
+ <![CDATA[(CUSTPERSON.level_=#custPersonVO.level#)]]>
+      </isNotEmpty>
+      <isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+ <![CDATA[
+ (CUSTPERSON.MASTER_DEPT_ID in 
+ (
+ SELECT dept.DEPT_ID
+ FROM ECC_FND.ECC_FND_DEPT dept
+ WHERE dept.enable_flag = 'T'
+ START WITH dept.DEPT_ID = #custPersonVO.deptId#
+ CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+ )
+ 
+ )
+ ]]>
+      </isGreaterThan>
+
+      <isGreaterThan prepend="AND" property="custPersonVO.personType" compareValue="0">
+ <![CDATA[(CUSTPERSON.PERSON_TYPE=#custPersonVO.personType#)]]>
+      </isGreaterThan>
+    </dynamic>
+ <![CDATA[
+ )
+ select rs.NAME, 
+ rs.id, 
+ rs.LINKMAN_TYPE,
+ rs.companyName, 
+ rs.deptName,
+ rs.TITLE,
+ rs.TITLE_LEVEL,
+ rs.LEVEL_, 
+ rs.Ds_Level,
+ rs.RELATION_LEVEL,
+ rs.MOBILE_PHONE,
+ rs.OFFICE_PHONE,
+ rs.POST_CODE,
+ rs.EMAIL,
+ rs.OUR_VISIT_DUTY_EMP,
+ rs.communication_address,
+ rs.HOME_POST_CODE,
+ rs.HOME_PHONE,
+ rs.address,
+ rs.BIRTHDAY,
+ rs.CONTACT_FLAG,
+ rs.OTHER_TYPE_FLAG,
+ ECC_CUST.GET_CUSTPERSON_PRODUCT_INFO(rs.ID) AS PRIMARY_PRODUCT_NAME,
+ rs.VERIFY_FLAG ,to_char(rs.last_update_time,'YYYY-MM-DD') LASTUPDATEDATE,
+ rs.person_type,
+ rs.language,
+ rs.Sex,
+ rs.Languagetype,
+ rs.Duty,
+ rs.Currnet_Country,
+ rs.userFullName,
+ rs.resultCount 
+ from 
+ (select resultTable.*,
+ emp.employee_name || '/' || emp.full_name as userFullName,
+ (SELECT Count(1) AS resultCount FROM resultTable) resultCount
+ from resultTable,
+ ecc_fnd.ecc_fnd_employee_v emp
+ WHERE emp.emplyee_id(+) = resultTable.OUR_VISIT_DUTY_EMP
+ ]]>
+    <isNotEqual prepend="AND" property="pageControlData.pageSize" compareValue="-1"> 
+ <![CDATA[ (resultNums > #pageControlData.startRowNum# and resultNums <= #pageControlData.endRowNum#) ]]>
+    </isNotEqual>
+ <![CDATA[
+ ) rs 
+ ]]>
+  </select>
+
+  <select id="loadPersonInfoDraftList" parameterClass="custPersonBO" resultMap="get-CustPersonDraftList-result">
+ <![CDATA[
+ WITH resultTable AS (
+ SELECT DISTINCT A.id,
+ A.NAME,
+ A.LINKMAN_TYPE,
+ B.NAME companyName,
+ cdept.name deptName,
+ dept.dept_name masterDeptName,
+ b.address,
+ A.TITLE,
+ A.LEVEL_,
+ A.Ds_Level,
+ A.RELATION_LEVEL,
+ A.MOBILE_PHONE,
+ A.OFFICE_PHONE,
+ A.POST_CODE,
+ A.EMAIL,
+ A.VERIFY_FLAG,
+
+ b.master_dept_id,
+ A.LAST_UPDATE_TIME,
+ rownum AS resultNums
+ FROM ECC_CUST.ECC_CUST_PERSON_INFO A
+ left join ecc_cust.ecc_cust_customer_dept cdept on cdept.id = A.Customer_Dept_Id, 
+ ECC_CUST.ECC_CUST_CUSTOMER B
+ left join ecc_fnd.ecc_fnd_dept dept on b.master_dept_id = dept.dept_id 
+ WHERE 
+ a.enable_flag = 'C'
+ and b.enable_flag = 'T'
+ and a.customer_id = b.id
+ and a.created_by = #custPersonVO.createdBy#
+ ]]>
+    <dynamic prepend="">
+      <isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+ <![CDATA[(A.LAST_UPDATE_TIME >= to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="lastUpdateDate">
+ <![CDATA[(A.LAST_UPDATE_TIME <= to_date(#lastUpdateDate#,'YYYY-MM-DD')+ 1)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.name">
+ <![CDATA[(A.NAME LIKE #custPersonVO.name# || '%')]]>
+      </isNotEmpty>
+
+      <isNotEmpty prepend="AND" property="companyName">
+ <![CDATA[(B.NAME LIKE #companyName# || '%')]]>
+      </isNotEmpty>
+
+      <isNotEmpty prepend="AND" property="custPersonVO.title">
+ <![CDATA[(A.TITLE LIKE '%' || #custPersonVO.title# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="customerType">
+ <![CDATA[(B.customer_type = #customerType#)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.level">
+ <![CDATA[(A.level_=#custPersonVO.level#)]]>
+      </isNotEmpty>
+    </dynamic>
+ <![CDATA[
+ )
+ select rs.NAME,
+ rs.id,
+ rs.LINKMAN_TYPE,
+ rs.companyName,
+ rs.deptName,
+ 
+ rs.address,
+ rs.masterDeptName,
+ 
+ rs.master_dept_id,
+ rs.TITLE,
+ rs.LEVEL_,
+ rs.Ds_Level,
+ rs.RELATION_LEVEL,
+ rs.MOBILE_PHONE,
+ rs.OFFICE_PHONE,
+ rs.POST_CODE,
+ rs.EMAIL,
+ rs.VERIFY_FLAG,
+ to_char(rs.last_update_time, 'YYYY-MM-DD') LASTUPDATEDATE,
+ rs.resultCount
+ from ( select resultTable.* ,
+ (SELECT Count(1) AS resultCount FROM resultTable) resultCount
+ from resultTable
+ WHERE resultNums >#pageControlData.startRowNum# and resultNums <= #pageControlData.endRowNum# ) rs 
+ ]]>
+  </select>
+
+ <select id="loadPersonInfoListId" parameterClass="custPersonBO" resultMap="get-CustPersonListId-result"> 
+	<![CDATA[
+		with resultTable as 
+		(
+			select temptable.id from 
+			(
+				select a.id
+					from ecc_cust.ecc_cust_person_info a
+						inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+						inner join ecc_cust.ecc_cust_customer_power p on p.customer_id= b.id
+					where a.enable_flag = 'T'
+					and   b.enable_flag = 'T'
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[	
+					and   p.employeeid =$authorityVO.userId$
+				
+				union
+				select a.id
+					from ecc_cust.ecc_cust_person_info a
+						inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+					where a.enable_flag = 'T' 
+					and b.enable_flag = 'T' 
+					and b.master_dept_id in
+						(SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (5001,40000,8200,40130,4800)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID)
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+					
+				union        
+                select a.id                        
+                    from ecc_cust.ecc_cust_person_info a
+                         inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+                    where a.enable_flag = 'T'
+                    and b.enable_flag = 'T'
+					and b.master_dept_id in
+                        (SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (8100)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID)
+                    and a.created_by = $authorityVO.userId$
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+					
+				union
+					select a.id
+					from ecc_cust.ecc_cust_person_info a
+						 inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+					where a.enable_flag = 'T'
+					and a.linkman_type = 'EPM'
+					and b.enable_flag = 'T'
+					and b.master_dept_id in
+					    (SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (8600,8610,8620)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID) 
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+
+				UNION
+					select a.id
+					from ecc_cust.ecc_cust_person_info a
+						inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+					where  a.enable_flag ='T'
+					and instr('BQ003,BQ004',A.LEVEL_) > 0
+					and b.enable_flag = 'T'
+					and b.master_dept_id in
+					    (SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (40140)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID)
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+					
+			) temptable
+               inner join ecc_cust.ecc_cust_person_info a on temptable.id = a.id
+               left join ecc_cust.ecc_cust_customer_dept cdept on cdept.id = a.customer_dept_id
+              where 1 = 1
+			  
+	]]>
+    <dynamic prepend="">
+      <isNotEmpty prepend="AND" property="custPersonVO.birthday">
+			<![CDATA[(TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') >= #custPersonVO.birthday#)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="tempbirthday">
+			<![CDATA[(TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') < to_date(#tempbirthday#,'YYYY-MM-DD') + 1)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.name">
+			<![CDATA[(upper(A.NAME) like '%' ||upper(#custPersonVO.name#)||'%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="deptName">
+			<![CDATA[(cdept.name LIKE '%' ||#deptName# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.titleLevel">
+			<![CDATA[(A.TITLE_LEVEL = #custPersonVO.titleLevel# )]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.title">
+			<![CDATA[(A.TITLE LIKE '%' || #custPersonVO.title# || '%')]]>
+      </isNotEmpty>
+      <isEqual prepend="AND" property="custPersonVO.linkManType" compareValue="EPM">
+			<![CDATA[(A.LINKMAN_TYPE=#custPersonVO.linkManType#)]]>
+      </isEqual>
+      <isNotEqual prepend="AND" property="custPersonVO.dsLevel" compareValue="0">
+			<![CDATA[A.Ds_Level=#custPersonVO.dsLevel#]]>
+      </isNotEqual>
+      <isNotEqual prepend="AND" property="custPersonVO.verifyFlag" compareValue="A">
+			<![CDATA[A.VERIFY_FLAG=#custPersonVO.verifyFlag#]]>
+      </isNotEqual>
+      <isNotEmpty prepend="AND" property="custPersonVO.email">
+			<![CDATA[(A.EMAIL LIKE #custPersonVO.email# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.especiallyInterest">
+			<![CDATA[(A.ESPECIALLY_INTEREST LIKE #custPersonVO.especiallyInterest# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.relationLevel">
+			<![CDATA[(A.RELATION_LEVEL=#custPersonVO.relationLevel#)]]>
+      </isNotEmpty>
+      <isEqual prepend="AND" property="custPersonVO.contactFlag" compareValue="Y">
+			<![CDATA[(A.CONTACT_FLAG<>'N' or a.CONTACT_FLAG is null)]]>
+      </isEqual>
+      <isEqual prepend="AND" property="custPersonVO.contactFlag" compareValue="N">
+			<![CDATA[(A.CONTACT_FLAG='N')]]>
+      </isEqual>
+      <isNotEmpty prepend="AND" property="custPersonVO.level">
+			<![CDATA[(A.level_=#custPersonVO.level#)]]>
+      </isNotEmpty>
+	  <isGreaterThan prepend="AND" property="custPersonVO.personType" compareValue="0">
+			<![CDATA[(A.PERSON_TYPE=#custPersonVO.personType#)]]>
+      </isGreaterThan>
+
+    </dynamic>
+	<![CDATA[
+	)
+	SELECT
+			result.*
+	FROM
+	(
+		SELECT * FROM 
+		(
+		    SELECT resultTable.*,viewTable.*,ROWNUM AS resultNums
+			FROM resultTable , (SELECT Count(1) AS resultCount FROM resultTable) viewTable   
+		)
+		WHERE resultNums > #pageControlData.startRowNum# and resultNums <= #pageControlData.endRowNum#
+	) result
+	
+	]]>
+  </select>
+
+  <select id="loadPersonInfoListContent" parameterClass="java.util.Map" resultMap="get-CustPersonListContent-result">
+<![CDATA[
+select rs.name
+,rs.id
+,rs.linkman_type
+,b.name companyname
+,cdept.name deptname
+,rs.title
+,rs.level_
+, rs.ds_level
+,rs.relation_level
+,rs.mobile_phone
+,rs.office_phone
+,rs.email
+,rs.verify_flag
+,rs.other_type_flag
+,emp.nameno as our_visit_duty_emp_name
+,lupdemp.nameno as last_updated_by_name
+,to_char(rs.last_update_time,'yyyy-mm-dd') as last_update_time
+,#resultCount# resultCount
+from ecc_cust.ecc_cust_person_info rs
+left join ecc_cust.ecc_cust_customer_dept cdept on cdept.id=rs.customer_dept_id 
+left join ecc_cust.ecc_cust_customer b on b.id=rs.customer_id
+left join ecc_fnd.ecc_fnd_emplyees emp on (rs.our_visit_duty_emp=emp.emplyee_id)
+left join ecc_fnd.ecc_fnd_emplyees lupdemp on (rs.last_updated_by=lupdemp.emplyee_id)
+where rs.id in($idList$) 
+order by rs.level_ desc
+]]>
+  </select>
+
+<select id="queryCRM" parameterClass="java.lang.String" resultClass="java.lang.String">
+  <![CDATA[
+      Select Auth.Auth_Id 
+        From Ecc_Fnd.Ecc_Fnd_Authority Auth
+       Where Auth.Auth_Title_Id = '4800'
+         And Auth.employee_Id = #userId#
+         and auth.Enable_Flag = 'T'
+   ]]>
+</select>
+
+<select id="queryLeaderDeptId" parameterClass="java.lang.String" resultClass="java.lang.String">
+  <![CDATA[
+      Select d.Dept_Id
+        From Ecc_Eai.Msms_Dept_Leader_From_Hr Hr
+   Left Join Ecc_Fnd.Ecc_Fnd_Emplyees Em On Hr.Leader_No = Em.Employee_No
+   Left Join Ecc_Fnd.Ecc_Fnd_Depts_v d On Hr.Old_Juris_Depart_Code = d.Dept_No
+   Where Em.Emplyee_Id = #userId#
+   ]]>
+</select>
+
+<select id="queryCustDeptId" parameterClass="custPersonBO" resultClass="java.lang.String">
+  <![CDATA[
+      Select Distinct cust.master_Dept_Id
+        From Ecc_Cust.Ecc_Cust_Person_Info Info
+   Left Join Ecc_Cust.Ecc_Cust_Customer Cust On Info.Customer_Id = Cust.Id
+       Where Info.id = #custPersonVO.id#
+   ]]>
+</select>
+  <select id="loadPersonInfoListContentForExport" parameterClass="custPersonBO"
+    resultMap="get-CustPersonListContent-result2">
+ <![CDATA[
+	with resultTable as 
+		(
+			select temptable.id from 
+			(
+				select a.id
+					from ecc_cust.ecc_cust_person_info a
+						inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+						inner join ecc_cust.ecc_cust_customer_power p on p.customer_id= b.id
+					where a.enable_flag = 'T'
+					and   b.enable_flag = 'T'
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[	
+					and   p.employeeid =$authorityVO.userId$
+				
+				union
+				select a.id
+					from ecc_cust.ecc_cust_person_info a
+						inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+					where a.enable_flag = 'T' 
+					and b.enable_flag = 'T' 
+					and b.master_dept_id in
+						(SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (5001,40000,8200,40130)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID)
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+					
+				union        
+                select a.id                        
+                    from ecc_cust.ecc_cust_person_info a
+                         inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+                    where a.enable_flag = 'T'
+                    and b.enable_flag = 'T'
+					and b.master_dept_id in
+                         (SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (8100)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID)
+                    and a.created_by = $authorityVO.userId$
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+					
+				union
+					select a.id
+					from ecc_cust.ecc_cust_person_info a
+						 inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+					where a.enable_flag = 'T'
+					and a.linkman_type = 'EPM'
+					and b.enable_flag = 'T'
+					and b.master_dept_id in
+					    (SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (8600,8610,8620)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID) 
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+
+				UNION
+					select a.id
+					from ecc_cust.ecc_cust_person_info a
+						inner join ecc_cust.ecc_cust_customer b on a.customer_id = b.id
+					where  a.enable_flag ='T'
+					and instr('BQ003,BQ004',A.LEVEL_) > 0
+					and b.enable_flag = 'T'
+					and b.master_dept_id in
+					    (SELECT dept.DEPT_ID
+                         FROM ECC_FND.ECC_FND_DEPT dept
+                         WHERE ENABLE_FLAG = 'T'
+                         START WITH dept.DEPT_ID IN
+                           (SELECT AUTH_DEPT_ID
+                            FROM ECC_FND.ECC_FND_AUTHORITY
+                            where ENABLE_FLAG = 'T'
+                               AND AUTH_TYPE = 'ORG_TYPE'
+                               AND AUTH_TITLE_ID IN (40140)
+                               AND EMPLOYEE_ID = $authorityVO.userId$)
+                        CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID)
+					]]>
+					<dynamic prepend="">
+					<isNotEmpty prepend="AND" property="customerType">
+					    <![CDATA[(b.customer_type = #customerType#)]]>
+                    </isNotEmpty>
+					<isNotEmpty prepend="AND" property="custPersonVO.lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME > to_date(#custPersonVO.lastUpdateDate#,'YYYY-MM-DD'))]]>
+					</isNotEmpty>
+					<isNotEmpty prepend="AND" property="lastUpdateDate">
+						<![CDATA[(A.LAST_UPDATE_TIME < to_date(#lastUpdateDate#,'YYYY-MM-DD') + 1)]]>
+					</isNotEmpty>
+					<isGreaterThan prepend="AND" property="custPersonVO.deptId" compareValue="0">
+						<![CDATA[
+							(
+								b.master_dept_id in 
+								(
+									select dept.dept_id
+									from ecc_fnd.ecc_fnd_dept dept
+									where dept.enable_flag = 'T'
+									START WITH dept.DEPT_ID = #custPersonVO.deptId#
+									CONNECT BY PRIOR dept.DEPT_ID = dept.PARENT_DEPT_ID
+								)
+							)
+						]]>
+					</isGreaterThan>
+					<isGreaterThan prepend="AND" property="custPersonVO.customerId" compareValue="0">
+						<![CDATA[(b.id = $custPersonVO.customerId$)]]>
+					</isGreaterThan>
+					</dynamic>
+					<![CDATA[
+					
+			) temptable
+               inner join ecc_cust.ecc_cust_person_info a on temptable.id = a.id
+               left join ecc_cust.ecc_cust_customer_dept cdept on cdept.id = a.customer_dept_id
+              where 1 = 1
+			  
+	]]>
+    <dynamic prepend="">
+      <isNotEmpty prepend="AND" property="custPersonVO.birthday">
+			<![CDATA[(TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') >= #custPersonVO.birthday#)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="tempbirthday">
+			<![CDATA[(TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') < to_date(#tempbirthday#,'YYYY-MM-DD') + 1)]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.name">
+			<![CDATA[(upper(A.NAME) like '%' ||upper(#custPersonVO.name#)||'%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="deptName">
+			<![CDATA[(cdept.name LIKE '%' ||#deptName# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.titleLevel">
+			<![CDATA[(A.TITLE_LEVEL = #custPersonVO.titleLevel# )]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.title">
+			<![CDATA[(A.TITLE LIKE '%' || #custPersonVO.title# || '%')]]>
+      </isNotEmpty>
+      <isEqual prepend="AND" property="custPersonVO.linkManType" compareValue="EPM">
+			<![CDATA[(A.LINKMAN_TYPE=#custPersonVO.linkManType#)]]>
+      </isEqual>
+      <isNotEqual prepend="AND" property="custPersonVO.dsLevel" compareValue="0">
+			<![CDATA[A.Ds_Level=#custPersonVO.dsLevel#]]>
+      </isNotEqual>
+      <isNotEqual prepend="AND" property="custPersonVO.verifyFlag" compareValue="A">
+			<![CDATA[A.VERIFY_FLAG=#custPersonVO.verifyFlag#]]>
+      </isNotEqual>
+      <isNotEmpty prepend="AND" property="custPersonVO.email">
+			<![CDATA[(A.EMAIL LIKE #custPersonVO.email# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.especiallyInterest">
+			<![CDATA[(A.ESPECIALLY_INTEREST LIKE #custPersonVO.especiallyInterest# || '%')]]>
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="custPersonVO.relationLevel">
+			<![CDATA[(A.RELATION_LEVEL=#custPersonVO.relationLevel#)]]>
+      </isNotEmpty>
+      <isEqual prepend="AND" property="custPersonVO.contactFlag" compareValue="Y">
+			<![CDATA[(A.CONTACT_FLAG<>'N' or a.CONTACT_FLAG is null)]]>
+      </isEqual>
+      <isEqual prepend="AND" property="custPersonVO.contactFlag" compareValue="N">
+			<![CDATA[(A.CONTACT_FLAG='N')]]>
+      </isEqual>
+      <isNotEmpty prepend="AND" property="custPersonVO.level">
+			<![CDATA[(A.level_=#custPersonVO.level#)]]>
+      </isNotEmpty>
+	  <isGreaterThan prepend="AND" property="custPersonVO.personType" compareValue="0">
+			<![CDATA[(A.PERSON_TYPE=#custPersonVO.personType#)]]>
+      </isGreaterThan>
+    </dynamic>
+ <![CDATA[
+	)
+ SELECT 
+ A.id,
+ A.NAME, 
+ A.LINKMAN_TYPE,
+ B.NAME companyName, 
+ cdept.name deptName,
+ A.TITLE,
+ jobs.name_cn TITLE_LEVEL,
+ A.LEVEL_, 
+ A.Ds_Level,
+ A.RELATION_LEVEL,
+ A.MOBILE_PHONE,
+ A.OFFICE_PHONE,
+ A.POST_CODE,
+ A.EMAIL,
+ A.VERIFY_FLAG,
+ TO_CHAR(A.LAST_UPDATE_TIME,'YYYY-MM-DD') LAST_UPDATE_TIME,
+ b.customer_type,
+ TO_CHAR(A.BIRTHDAY,'YYYY-MM-DD') BIRTHDAY,
+ A.CONTACT_FLAG,
+ A.ESPECIALLY_INTEREST,
+ A.PERSON_TYPE,
+ B.MASTER_DEPT_ID,
+ A.OUR_VISIT_DUTY_EMP,
+ a.address,
+ a.communication_address,
+ A.HOME_POST_CODE,
+ A.HOME_PHONE,
+ A.language,
+ A.Sex,
+ A.Languagetype,
+ A.Duty,
+ A.Currnet_Country,
+ A.OTHER_TYPE_FLAG,
+ A.PRODUCT_CATEGORY,
+ dv.FULL_NAME as master_dept_name,
+ 0 resultCount
+ FROM (
+		 SELECT resultTable.*,ROWNUM AS resultNums
+			FROM resultTable 
+      ) rr
+ inner join ECC_CUST.ECC_CUST_PERSON_INFO a on a.id = rr.id
+ inner join ECC_CUST.ECC_CUST_CUSTOMER B on b.id=a.customer_id
+ left join ecc_cust.ecc_cust_customer_dept cdept on cdept.id=a.customer_dept_id 
+ left join ecc_fnd.ecc_fnd_depts_v dv on dv.DEPT_ID = B.MASTER_DEPT_ID
+ left join ECC_CUST.CUST_JOB_LEVEL jobs on to_char(jobs.id) = a.title_level 
+ WHERE rr.resultNums > 0
+ and rr.resultNums <= 5000 
+ order by rr.id desc
+ ]]>
+  </select>
+
+
+  <select id="getTitleLevelId" resultClass="java.lang.String">
+ <![CDATA[
+ select chinese_name from ecc_fnd.ecc_fnd_iecc_property
+ where PROPERTY_TYPE = 'CUSTPERSON_TITLELEVEL'
+ ]]>
+  </select>
+
+  <select id="getCustomerId" parameterClass="java.lang.String" resultClass="java.lang.String">
+ <![CDATA[
+ select ID from ECC_CUST.ECC_CUST_CUSTOMER
+ where ENABLE_FLAG='T' AND NAME = #orgCustomer#
+ ]]>
+  </select>
+  
+  <select id="getPhotoId" parameterClass="java.lang.Integer" resultClass="java.lang.String">
+     <![CDATA[
+         Select t.Url
+           From Ecc_Fnd.Doc_Store t
+          Where t.Relate_Id = #personId#
+            And (Upper(t.Url) Like '%.JPG%' Or Upper(t.Url) Like '%.PNG%' Or
+                 Upper(t.Url) Like '%.GIF%')
+     ]]>
+  </select>
+  
+  <!-- 6396000083 LiXuMing 2011-01-11 START -->
+  <typeAlias alias="jobLevelBo" type="com.zte.ecc.business.custom.custperson.model.JobLevelBO"/>
+  <typeAlias alias="jobLevelVo" type="com.zte.ecc.access.custom.custperson.valueobject.JobLevelVO"/>
+  
+  <resultMap class="jobLevelVo" id="listJobLevel">
+  	<result property="id" column="ID"/>
+  	<result property="levels" column="LEVELS" nullValue=""/>
+  	<result property="nameCn" column="NAMECN" nullValue=""/>
+  	<result property="nameEn" column="NAMEEN" nullValue=""/>
+  	<result property="custCategory" column="CUSTCATEGORY" nullValue=""/>
+  	<result property="custType" column="CUSTTYPE" nullValue=""/>
+  </resultMap>
+  
+  <select id="queryJobLevel" parameterClass="jobLevelBo" resultMap="listJobLevel">
+	  <![CDATA[
+	  	Select 
+	       jobLevel.id As ID,
+	       jobLevel.Levels As Levels,
+	       jobLevel.name_cn As NAMECN,
+	       jobLevel.name_en As NAMEEN,
+	       jobLevel.cust_category As CUSTCATEGORY,
+	       jobLevel.cust_type As CUSTTYPE
+		From ECC_CUST.CUST_JOB_LEVEL jobLevel 
+		Where jobLevel.enabled_flag = 'Y'
+	  ]]>
+		<isNotEmpty prepend="and" property="custCategory">
+			<![CDATA[
+			jobLevel.cust_category = #custCategory#
+			]]>
+		</isNotEmpty>
+  </select>
+  
+  <!-- 6396000083 LiXuMing 2011-01-11 END -->
+
+  <!-- 6396000083 LiXuMing 2011-01-16 START -->
+  <typeAlias alias="recepitonLevelVo" type="com.zte.ecc.access.custom.custperson.valueobject.PecepitonLevelVO"/>
+  
+  <select id="stringReceLevel" parameterClass="recepitonLevelVo" resultClass="string">
+	  <![CDATA[
+	  	Select RECE.RECEPITON_LEVEL 
+		From ECC_CUST.CUST_RECEPITON_LEVEL RECE 
+		Where RECE.ENABLED_FLAG = 'Y'
+	  ]]>
+		<isNotEmpty prepend="and" property="custCategory">
+			<![CDATA[
+			RECE.CUST_CATEGORY = #custCategory#
+			]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="custType">
+			<![CDATA[
+			RECE.CUST_TYPE = #custType#
+			]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="customLevel">
+			<![CDATA[
+			RECE.CUSTOM_LEVEL = #customLevel#
+			]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="operatorsLevel">
+			<![CDATA[
+			 RECE.OPERATORS_LEVEL = #operatorsLevel#
+			]]>
+		</isNotEmpty>
+  </select>
+  
+  <!-- 6396000083 LiXuMing 2011-01-16 END -->
+  
+  <select id="queryAllJobLevel" resultMap="get-jobLevel-result">
+      select distinct t.name_cn, t.levels from ecc_cust.cust_job_level t 
+      where t.enabled_flag='Y'
+  </select>
+  
+  <!-- 6418000200 FengXiaoMei 2015-03-13 BEGIN -->
+  <select id="queryCustLevel" resultClass="java.lang.String" parameterClass="java.lang.Integer">
+  	<![CDATA[
+  		SELECT p.field1
+		  FROM ECC_FND.ECC_FND_IECC_PROPERTY p
+		 WHERE ENABLE_FLAG = 'T'
+		   AND PROPERTY_TYPE in ('APPROVE_MASTER_DEPT','APPROVE_POLITY_BUSINESS')
+		   and property_id = #propertyId#
+		   AND ISHISTORY_FLAG = 'N'
+  	]]>
+  </select>
+  <!-- 6418000200 FengXiaoMei 2015-03-13 END -->
+  
+
+</sqlMap>

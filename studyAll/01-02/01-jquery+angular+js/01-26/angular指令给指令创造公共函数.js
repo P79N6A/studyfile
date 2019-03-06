@@ -1,0 +1,32 @@
+//定义公共的方法,用于指令中
+//constant 注入一个常数
+.constant('函数名',function(par){
+	//方法体
+	console.log(par);
+}).driective('myDir',['函数名',function(name){
+	restrict:'A',
+	replace:true,
+	require:'^ngModel',
+	scope{
+		name:'=';
+	}
+	template:'<div>你好</div>'
+	link:function(scope, element, ctrl,ngModel){
+		//此处执行constant中定义的函数
+		name(element);
+	}
+}]);
+.constant('name',function(par){
+	console.log('here');
+}).directive('mDirct',['name',function(name){
+	restrict:'A',
+	replace:true,
+	required:'^ngModel',
+	scope{
+		name:'='
+	}
+	template:'<div>你好</div>'
+	link:function(scope,element,attrs,ngModel){
+		name(element);
+	}
+}]);

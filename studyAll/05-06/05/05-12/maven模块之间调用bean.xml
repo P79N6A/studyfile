@@ -1,0 +1,80 @@
+<!-- 飞哥的项目中需要注意，不属于一条路劲的模块间，不能调用DaoImpl的bean -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<!-- 父依赖 -->
+	<parent>
+		<groupId>com.zycx</groupId>	<!-- 其实就是包名 -->
+		<artifactId>udream_parent</artifactId>	<!-- 其实就是模块名 -->
+		<version>0.0.1-SNAPSHOT</version>	<!-- 版本 -->
+	</parent>
+	
+	<!-- modelVersion当前模型的版本，父子模块都需要声明 -->
+	<modelVersion>4.0.0</modelVersion>
+	<!-- 声明本身：由于继承父类，三大坐标中的groupId和version取决于父类，本身的只需要声明artifactId-->
+	<artifactId>biz_module</artifactId>	<!-- 当前模块名 -->
+	<!-- 打包方式： jar:调用maven-jar-plugin的jar任务打包；war会调用war:war来完成打包；注意父类pom打包方式只能是pom-->
+	<packaging>war</packaging>
+	
+	<!-- 该模块的名字，用于描述模块 -->
+	<name>biz_module</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- 声明常量 -->
+	<!-- 声明后${project.build.sourceEncoding}就等于UTF-8 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>utf-8	</project.reporting.outputEncoding>
+		<org.springframework.version>3.2.4.RELEASE</org.springframework.version>
+		<spring-asm.version>3.1.2.RELEASE</spring-asm.version>
+		<servlet.version>2.5</servlet.version>
+		<jsp.version>2.1</jsp.version>
+	</properties>
+
+	<!-- 加入依赖 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.zycx</groupId>
+			<artifactId>udream_facade</artifactId> <!-- 依赖的模块 -->
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	
+	
+	<build>
+		<!-- 默认行为 -->
+		<defaultGoal>compile</defaultGoal>
+		<!-- 最终名 -->
+		<finalName>udream_parent</finalName>
+		
+		<pluginManagement>
+			<!-- 相关插件 -->
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<!-- 以下配置在父类中，是你搭建的nexus的服务器 -->
+	<distributionManagement>
+		<repository>
+			<id>nexus-release</id>
+			<name>User Project Release</name>
+			<url>http://192.192.0.202:8081/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>User Project SNAPSHOTS</name>
+			<url>http://192.192.0.202:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

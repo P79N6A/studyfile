@@ -1,0 +1,30 @@
+//1.微信退款
+//2.代金券回滚
+//3.剔除换卡，退卡订单
+//4.未开场的约个球，活动需要退款
+添加代金券菜单
+{
+	"isUseLimit":"1",
+	"isCrowdLimit":"0",
+	"money":"100",
+	"description":"",
+	"venueId":"JfQ0YK0rzpBuPp4q21z",
+	"issuedQuantity":"199",
+	"isShowHome":"0",
+	"isUseTimeLimit":"0",
+	"useAreaId": "4NhFZi51BevUYRXCrPJ,dGAqa3VmwUDrnUwl8XK" ,
+	"endDate":"2017-10-26",
+	"isHolidayVacation":"1",
+	"consumptionAmount":"200",
+	"isAreaLimit":"1",
+	"receiveQuantity":"1",
+	"startDate":"2017-10-26",
+	"name":"仅新用"
+}
+
+{
+	"ticketIds":[
+		"13324e3a466d43bfa6371b2283383c77",
+		"c73c9e945bec43c1ac037f046f5e25ac"
+	]
+}

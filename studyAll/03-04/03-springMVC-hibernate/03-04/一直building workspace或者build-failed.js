@@ -1,0 +1,1 @@
+右键项目properties-Buildders把JavaScript Validator的钩去掉

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--这里的name是发布的service类名 + "Service", targetNamespace 是取决于发布类所在的包  -->
+<wsdl:definitions   name="HelloWorldImplService"   targetNamespace="http://test/">
+	<!--types 的作用是定义输入输出参数都是什么样子的(类型)  -->
+	<wsdl:types  >
+		<xs:schema   elementFormDefault="unqualified"   targetNamespace="http://test/"   version="1.0">
+			<!--输入参数名字为‘sayHello’，类型是复杂类型‘sayHello’，在下面定义  -->
+			<xs:element   name="sayHello"   type="tns:sayHello" />
+			<!--输出参数名字为‘sayHelloResponse’，类型是复杂类型sayHelloResponse, 在下面定义 -->
+			<xs:element   name="sayHelloResponse"   type="tns:sayHelloResponse" />
+			<!--输入参数类型的具体定义：包含一个element,名字为arg0，类型为string -->
+			<xs:complexType   name="sayHello">
+				<!-- 这里的name 是自动生成的。当然，也可以在代码中指定名字。         public @WebResult(name="sayHelloResult") String sayHello(@WebParam(name="name") String str)   -->
+				<xs:sequence>
+					<xs:element   minOccurs="0"   name="arg0"   type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType   name="sayHelloResponse">
+				<xs:sequence>
+					<xs:element   minOccurs="0"   name="return"   type="xs:string"   />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<!--这个message代表输入信息。这个输入信息的类型是sayHello，在<types>中定义过   -->
+	<wsdl:message   name="sayHello">
+		<wsdl:part   element="tns:sayHello"   name="parameters"></wsdl:part>
+	</wsdl:message>
+	<!--这个message代表输出信息。这个输出信息的类型是sayHelloResponse，在<types>中定义过  -->
+	<wsdl:message   name="sayHelloResponse">
+		<wsdl:part   element="tns:sayHelloResponse"   name="parameters">     </wsdl:part>
+	</wsdl:message>
+	<!--portType 就是我们定义的接口。一个接口对应一个port  -->
+	<wsdl:portType   name="HelloWorld">
+		<!--这里的一个operation就是 接口中的一个方法  -->
+		<wsdl:operation   name="sayHello">
+			<wsdl:input   message="tns:sayHello"   name="sayHello">       </wsdl:input>
+			<wsdl:output   message="tns:sayHelloResponse"  name="sayHelloResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<!--把接口进行 soap 绑定 -->
+	<wsdl:binding   name="HelloWorldImplServiceSoapBinding"   type="tns:HelloWorld">
+		<!-- 这里指明绑定的协议为 http,style为document -->
+		<soap:binding   style="document"   transport="http://schemas.xmlsoap.org/soap/http" />
+		<!-- 具体方法的绑定类型定义 -->
+		<wsdl:operation   name="sayHello">
+			<soap:operation   soapAction=""   style="document" />
+			<wsdl:input   name="sayHello">
+				<!--literal文本   -->
+				<soap:body   use="literal" />
+			</wsdl:input>
+			<wsdl:output   name="sayHelloResponse">
+				<soap:body   use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<!--把n个接口放到一起，总称为一个service  -->
+	<!--这里一个port就是一个接口。对应的绑定刚刚定义过   -->
+	<wsdl:port   binding="tns:HelloWorldImplServiceSoapBinding"  name="HelloWorldImplPort">
+		<!--这个接口的地址   -->
+		<soap:address   location="http://localhost:8080/HelloWorld"   />
+	</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
+<!-- <wsdl:service   name="HelloWorldImplService"> -->

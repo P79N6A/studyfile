@@ -1,0 +1,40 @@
+<div class="headBg" >
+	<div class="logo"><a ui-sref="app.home"><img src="images/logo.png" /></a></div>
+    <div style="padding-left:210px;">
+        <div style="position:relative; width:100%;">            
+    <div id="nav-menu">
+                <ul class="menu" id="menu" style="position:absolute;left:186px; border-left:1px solid #086a9f;">
+			
+			<li >
+                <a href="javascript:void(0)" ><span>个人中心</span></a>    
+				<ul >    
+                	<li></li> 					
+					<li><a ui-sref="app.taskComing" >任务管理</a></li>
+					<li><a ui-sref="app.communication" >沟通管理</a></li>
+                    <li ></li>
+				</ul>
+			</li>	
+			<li >
+                <a href="javascript:void(0)" ><span>个人中心</span></a>    
+				<ul >    
+                	<li></li> 					
+					<li><a ui-sref="app.taskComing" >任务管理</a></li>
+					<li><a ui-sref="app.communication" >沟通管理</a></li>
+                    <li ></li>
+				</ul>
+			</li>	
+			
+		</ul>
+            </div>
+        </div>     
+    </div>       
+</div>
+<script type="text/javascript">
+$('#nav-menu .menu > li').hover(function(){
+	$(this).find('.children').animate({ opacity:'show', height:'show' },200);
+	$(this).find('.submenu').addClass('navhover');
+}, function() {
+	$('.children').stop(true,true).hide();
+	$('.submenu').removeClass('navhover');
+});
+</script>

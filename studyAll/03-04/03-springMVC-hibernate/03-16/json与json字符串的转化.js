@@ -1,0 +1,1 @@
+var last=JSON.stringify(obj); //将JSON对象转化为JSON字符

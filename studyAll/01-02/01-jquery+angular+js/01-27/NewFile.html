@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* var a=100;
+function test(){
+	//不带var就没有开辟栈，还是堆里面的对象，是全局变量
+	//带了就会开辟栈，就是此处的局部变量；
+	a=89;
+}
+test();
+alert(a)
+
+var mVal=900;
+function cc(val){
+	//此处val时属于cc方法内的局部变量与调用该函数的传入的参数mVal并不是同一个东西，栈中val,mVal对应两个不同的值
+	alert('qian_'+val)
+	val=90;
+	alert('hou_'+val)
+}
+cc(mVal);
+alert('end_'+mVal); */
+/* function abc(num){
+	if(num>3){
+		abc(--num)
+	}
+	document.write(num+" ");
+}
+abc(10); */
+/* var mVal=900;
+function cc(val){
+	//此处val是属于cc方法内的局部变量与调用该函数的传入的参数mVal并不是同一个东西，栈中val,mVal对应两个不同的值
+	alert('qian_'+val);
+	val=90;
+	alert('hou_'+val);
+}
+cc(mVal);
+alert('end_'+mVal); */
+
+var user ={};
+user.account='123456';
+user.password='123456';
+var last=JSON.stringify(user);
+alert(last);
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>

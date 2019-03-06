@@ -1,0 +1,15 @@
+<aop:aspectj-autoproxy />
+通过aop命名空间的<aop:aspectj-autoproxy/>
+
+@Aspect意思是'面向切面编程'，一个类前面加上@Aspect说明这个类使用了这个技术，
+
+spring.schemas和spring.handlers对xmlns配置文件的作用
+'spring两种可配置化支持'
+一，基于spring bean
+
+二，基于Schema扩展自定义配置
+1，设计属性和javaBean
+2，编写xsd文件
+3，编写NamespaceHandler和BeanDefinitionParser完成解析工作
+4，编写spring.handlers和spring.schemas串联起所有部件
+5，bean中应用
