@@ -56,3 +56,7 @@ hmset ps:hardware:config: fwAnalysisVer "1" fwAnalysisUrl "www.baidu.com"
 hdel customer id
 
 hset ps:request:limitUrl:/power/locationTakeBack/ maxTimes 20
+
+hset ps:group:insurance 20 5
+hset ps:user:insurance:group d20 5
+hset ps:conf insuranceurl www.baidu.com
